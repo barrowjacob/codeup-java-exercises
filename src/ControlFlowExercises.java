@@ -1,15 +1,16 @@
+import java.util.Scanner;
+
 public class ControlFlowExercises {
-    public static void main(String[] args) {
-        for (int i = 1; i < 100; i ++) {
-            if (i % 15 == 0) {
-                System.out.println("fizzBuzz");
-            } else if (i % 5 == 0) {
-                System.out.println("buzz");
-            } else if (i % 3 == 0) {
-                System.out.println("fizz");
-            } else {
-                System.out.println(i);
-            }
+    public static void main (String[] args) {
+
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("enter a number of your choosing");
+        long userInput = scanner.nextInt();
+
+        System.out.print("number | squared | cubed \n");
+        System.out.print("-------|---------|-------\n");
+        for (long i = 1; i < userInput; i++) {
+            System.out.print(i + "      |    " + i*i + "     |    " + i*i*i +"\n");
         }
     }
 }
