@@ -17,6 +17,17 @@ public class MethodsExercise {
 //            return newOne;
 //
 //        }
+
+    public static long recusionMult(int one, int two) {
+        if (two == 0) {
+            return 0;
+        } else if (two == 1) {
+            return one;
+        } else if (two == 2) {
+            return one + one;
+        }
+        return one + recusionMult(one, two - 1);
+    }
 ////    public static void count(int one, int two) {
 ////        if (two == 0) {
 ////            System.out.println("All done!");
@@ -42,25 +53,44 @@ public class MethodsExercise {
         public static int getInteger(int min, int max) {
             System.out.println("Please enter a number between 1 and 10");
             Scanner scanner = new Scanner(System.in);
-
+            String newString = "Great! Your number is in range!";
             int newInput = scanner.nextInt();
             do {
                 if (newInput < max && newInput > min) {
                     System.out.println("Great! " + newInput + " is in range!");
+                    continue;
                 } else {
                     System.out.println("Lameo face guy. Do better.");
-                    newInput = scanner.nextInt();
-                }
+                } newInput = scanner.nextInt();
+
             } while (newInput > max || newInput < min);
             return newInput;
         }
 
-    public static void main(String[] args) {
+        public static Integer factorialMaker() {
+            System.out.println("Please enter an integer between 1 and 10");
+            Scanner scanner = new Scanner(System.in);
+            int newInput = scanner.nextInt();
+            System.out.println(newInput);
+            System.out.println("Do you want to continue?");
+            String newNewInput = scanner.next();
+            if (newNewInput.equalsIgnoreCase("yes")) {
+                for (int i = newInput -1; i > 0; i--) {
+                    newInput *= (i);
+                }
+            } return newInput;
+
+        }
+
+            public static void main(String[] args){
 //        System.out.println(addition(1,1));
 //            System.out.println(subtraction(4,1));
 //            System.out.println(multiplication(3,4));
 //            System.out.println(division(4,2));
 //            System.out.println(modulo(4,3));
-        System.out.println(getInteger(1, 10));
-        }
+//        System.out.println(getInteger(1, 10));
+//                System.out.println(recusionMult(4, 10));
+                System.out.println(factorialMaker());
+            }
+
     }
