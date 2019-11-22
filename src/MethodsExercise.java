@@ -53,7 +53,6 @@ public class MethodsExercise {
         public static int getInteger(int min, int max) {
             System.out.println("Please enter a number between 1 and 10");
             Scanner scanner = new Scanner(System.in);
-            String newString = "Great! Your number is in range!";
             int newInput = scanner.nextInt();
             do {
                 if (newInput < max && newInput > min) {
@@ -72,14 +71,18 @@ public class MethodsExercise {
             Scanner scanner = new Scanner(System.in);
             int newInput = scanner.nextInt();
             System.out.println(newInput);
-            System.out.println("Do you want to continue?");
-            String newNewInput = scanner.next();
-            if (newNewInput.equalsIgnoreCase("yes")) {
-                for (int i = newInput -1; i > 0; i--) {
-                    newInput *= (i);
+            if (newInput < 10 && newInput > 0) {
+                System.out.println("Do you want to continue?");
+                String newNewInput = scanner.next();
+                if (newNewInput.equalsIgnoreCase("yes")) {
+                    for (int i = newInput -1; i > 0; i--) {
+                        newInput *= (i);
+                    }
                 }
-            } return newInput;
-
+            } else {
+                return factorialMaker();
+            }
+            return newInput;
         }
 
             public static void main(String[] args){
@@ -88,7 +91,7 @@ public class MethodsExercise {
 //            System.out.println(multiplication(3,4));
 //            System.out.println(division(4,2));
 //            System.out.println(modulo(4,3));
-//        System.out.println(getInteger(1, 10));
+//            System.out.println(getInteger(1, 10));
 //                System.out.println(recusionMult(4, 10));
                 System.out.println(factorialMaker());
             }
