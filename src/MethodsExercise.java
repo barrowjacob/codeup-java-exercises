@@ -85,23 +85,24 @@ public class MethodsExercise {
 //            }
 //            return newInput;
 //        }
-static Scanner scanner = new Scanner(System.in);
-    public static void dice () {
-        System.out.println("Please enter how many sides your dice has...");
-        int userInput = scanner.nextInt();
-        System.out.println(userInput);
-        System.out.println("Roll...yes or no");
-        String roll = scanner.next();
-        if (roll.equalsIgnoreCase("yes")) {
-            for (int i = 0; i < 2; i++) {
-                Random diceRoll = new Random();
-                int randomRandom = diceRoll.nextInt(userInput - 1) + 1;
-                System.out.println(randomRandom);
+
+    static Scanner scanner = new Scanner(System.in);
+        public static void dice() {
+            System.out.println("Please enter how many sides are on your make believe dice!");
+            int diceSides = scanner.nextInt();
+            System.out.println(diceSides);
+            System.out.println("Would you like to roll? Yes or no");
+            String roll = scanner.next();
+            if (roll.equalsIgnoreCase("yes")) {
+                for (int i = 0; i < 2; i++) {
+                    Random diceRoll = new Random();
+                    int newDiceRoll = diceRoll.nextInt(userInput - 1) + 1;
+                    System.out.println(newDiceRoll);
+                }
+            } else {
+                dice();
             }
-        }else{
-            dice();
         }
-    }
 
 
             public static void main(String[] args){
@@ -113,6 +114,7 @@ static Scanner scanner = new Scanner(System.in);
 //            System.out.println(getInteger(1, 10));
 //                System.out.println(recusionMult(4, 10));
 //                System.out.println(factorialMaker());
+                dice();
             }
 
     }
