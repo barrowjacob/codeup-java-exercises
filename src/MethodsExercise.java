@@ -1,3 +1,4 @@
+import java.util.Random;
 import java.util.Scanner;
 
 public class MethodsExercise {
@@ -18,16 +19,16 @@ public class MethodsExercise {
 //
 //        }
 
-    public static long recusionMult(int one, int two) {
-        if (two == 0) {
-            return 0;
-        } else if (two == 1) {
-            return one;
-        } else if (two == 2) {
-            return one + one;
-        }
-        return one + recusionMult(one, two - 1);
-    }
+//    public static long recusionMult(int one, int two) {
+//        if (two == 0) {
+//            return 0;
+//        } else if (two == 1) {
+//            return one;
+//        } else if (two == 2) {
+//            return one + one;
+//        }
+//        return one + recusionMult(one, two - 1);
+//    }
 ////    public static void count(int one, int two) {
 ////        if (two == 0) {
 ////            System.out.println("All done!");
@@ -50,40 +51,58 @@ public class MethodsExercise {
 //        }
 //
 
-        public static int getInteger(int min, int max) {
-            System.out.println("Please enter a number between 1 and 10");
-            Scanner scanner = new Scanner(System.in);
-            int newInput = scanner.nextInt();
-            do {
-                if (newInput < max && newInput > min) {
-                    System.out.println("Great! " + newInput + " is in range!");
-                    continue;
-                } else {
-                    System.out.println("Lameo face guy. Do better.");
-                } newInput = scanner.nextInt();
-
-            } while (newInput > max || newInput < min);
-            return newInput;
-        }
-
-        public static Integer factorialMaker() {
-            System.out.println("Please enter an integer between 1 and 10");
-            Scanner scanner = new Scanner(System.in);
-            int newInput = scanner.nextInt();
-            System.out.println(newInput);
-            if (newInput < 10 && newInput > 0) {
-                System.out.println("Do you want to continue?");
-                String newNewInput = scanner.next();
-                if (newNewInput.equalsIgnoreCase("yes")) {
-                    for (int i = newInput -1; i > 0; i--) {
-                        newInput *= (i);
-                    }
-                }
-            } else {
-                return factorialMaker();
+//        public static int getInteger(int min, int max) {
+//            System.out.println("Please enter a number between 1 and 10");
+//            Scanner scanner = new Scanner(System.in);
+//            int newInput = scanner.nextInt();
+//            do {
+//                if (newInput < max && newInput > min) {
+//                    System.out.println("Great! " + newInput + " is in range!");
+//                    continue;
+//                } else {
+//                    System.out.println("Lameo face guy. Do better.");
+//                } newInput = scanner.nextInt();
+//
+//            } while (newInput > max || newInput < min);
+//            return newInput;
+//        }
+//
+//        public static Integer factorialMaker() {
+//            System.out.println("Please enter an integer between 1 and 10");
+//            Scanner scanner = new Scanner(System.in);
+//            int newInput = scanner.nextInt();
+//            System.out.println(newInput);
+//            if (newInput < 10 && newInput > 0) {
+//                System.out.println("Do you want to continue?");
+//                String newNewInput = scanner.next();
+//                if (newNewInput.equalsIgnoreCase("yes")) {
+//                    for (int i = newInput -1; i > 0; i--) {
+//                        newInput *= (i);
+//                    }
+//                }
+//            } else {
+//                return factorialMaker();
+//            }
+//            return newInput;
+//        }
+static Scanner scanner = new Scanner(System.in);
+    public static void dice () {
+        System.out.println("Please enter how many sides your dice has...");
+        int userInput = scanner.nextInt();
+        System.out.println(userInput);
+        System.out.println("Roll...yes or no");
+        String roll = scanner.next();
+        if (roll.equalsIgnoreCase("yes")) {
+            for (int i = 0; i < 2; i++) {
+                Random diceRoll = new Random();
+                int randomRandom = diceRoll.nextInt(userInput - 1) + 1;
+                System.out.println(randomRandom);
             }
-            return newInput;
+        }else{
+            dice();
         }
+    }
+
 
             public static void main(String[] args){
 //        System.out.println(addition(1,1));
@@ -93,7 +112,7 @@ public class MethodsExercise {
 //            System.out.println(modulo(4,3));
 //            System.out.println(getInteger(1, 10));
 //                System.out.println(recusionMult(4, 10));
-                System.out.println(factorialMaker());
+//                System.out.println(factorialMaker());
             }
 
     }
