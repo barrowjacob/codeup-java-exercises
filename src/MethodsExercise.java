@@ -96,7 +96,7 @@ public class MethodsExercise {
             if (roll.equalsIgnoreCase("yes")) {
                 for (int i = 0; i < 2; i++) {
                     Random diceRoll = new Random();
-                    int newDiceRoll = diceRoll.nextInt(userInput - 1) + 1;
+                    int newDiceRoll = diceRoll.nextInt(diceSides - 1) + 1;
                     System.out.println(newDiceRoll);
                 }
             } else {
@@ -114,7 +114,8 @@ public class MethodsExercise {
 //            System.out.println(getInteger(1, 10));
 //                System.out.println(recusionMult(4, 10));
 //                System.out.println(factorialMaker());
-                dice();
+//                dice();
+
             }
 
     }
