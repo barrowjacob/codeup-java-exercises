@@ -9,16 +9,14 @@ public class HighLow {
        int rando_val = rando.nextInt(max) + min;
        System.out.printf("Welcome! Guess a number between %s and %s!", min, max);
        int userInput = sc.nextInt();
-       Boolean youWin = false;
        int guessCounter = 0;
         int remainingGuesses = 10;
 
        //begin the guessing
-       while (!youWin) {
+       while (true) {
            remainingGuesses--;
            if (userInput == rando_val) {
                guessCounter++;
-               youWin = true;
                System.out.printf("%s%n It took you %s guesses!%n Thanks for playing my game!%n", winner, guessCounter);
                return;
            } else if (userInput < rando_val && userInput > min) {
