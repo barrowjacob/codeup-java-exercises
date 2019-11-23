@@ -16,7 +16,22 @@ public class turtleBear {
 
     //set everything up
     public static void settingUp() {
-        System.out.printf("Greetings individual! What is your name?%n");
+        System.out.printf("Greetings individual! %n");
+        sleepy(1000);
+        System.out.printf("Are you prepared to fight in%nEXTREME%n");
+        sleepy(1000);
+        System.out.printf("%nONE ON ONE%n");
+        sleepy(1000);
+        System.out.printf("MAXIMUM%n");
+        sleepy(1000);
+        System.out.printf("EXTREME COMBAT?%n");
+        String userInput = sc.next();
+        if (userInput.equalsIgnoreCase("yes") || userInput.equalsIgnoreCase("yep")) {
+            System.out.printf("Great! Let's do this!");
+        } else {
+            System.out.printf("Tough stuff! Let's do this anyways!%n");
+        }
+        System.out.printf("What is your name?%n");
         userName = sc.next();
         System.out.printf("%s, eh?", userName);
         sleepy(1000);
@@ -40,7 +55,7 @@ public class turtleBear {
     }
 
     public static void characterCreation() {
-        System.out.printf(" Please tell me your of your might. Strength: (1-10)%n", userName);
+        System.out.printf("Please tell me your of your might. Strength: (1-10)%n", userName);
         byte userStrength = sc.nextByte();
         System.out.printf("And how fast are you? Speed: (1-10)%n");
         byte userSpeed = sc.nextByte();
@@ -190,6 +205,11 @@ public class turtleBear {
     }
 
     public static void theFight() {
+
+
+
+
+
         System.out.printf("Coming soon... The actual fighting!!!");
     }
     public static void main(String[] args) {
