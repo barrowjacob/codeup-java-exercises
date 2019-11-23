@@ -15,26 +15,27 @@ public class HighLow {
        //begin the guessing
        while (true) {
            remainingGuesses--;
+           if (remainingGuesses < 1) {
+               System.out.printf("You guessed too many times. %nYou lose.");
+               return;
+           }
            if (userInput == rando_val) {
                guessCounter++;
                System.out.printf("%s%n It took you %s guesses!%n Thanks for playing my game!%n", winner, guessCounter);
                return;
            } else if (userInput < rando_val && userInput > min) {
                guessCounter++;
-               remainingGuesses--;
                System.out.printf("%n*********************%nYou have %s guesses remaining.%n*********************%n%n", remainingGuesses);
                if (guessCounter == 1) {
                    System.out.printf("Nope. Guess higher. %nThat was your first guess. %nThere may still be some hope.%n");
                } else { System.out.printf("Nope. Guess higher. You are at %s guesses. No pressure.%n", guessCounter);}
            } else if (userInput > rando_val && userInput < max) {
-               remainingGuesses--;
                guessCounter++;
                System.out.printf("%n*********************%nYou have %s guesses remaining.%n*********************%n%n", remainingGuesses);
                if (guessCounter == 1) {
                    System.out.printf("Nope. Guess lower. %nThat was your first guess. %nThere may still be some hope.%n");
                } else { System.out.printf("Nope. Guess lower. You are at %s guesses. No pressure.%n", guessCounter);}
            } else {
-               remainingGuesses--;
                guessCounter++;
                System.out.printf("%n*********************%nYou have %s guesses remaining.%n*********************%n%n", remainingGuesses);
                if (guessCounter == 1) {
