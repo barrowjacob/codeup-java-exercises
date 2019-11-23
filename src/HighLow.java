@@ -2,39 +2,55 @@ import java.util.Scanner;
 import java.util.Random;
 
 public class HighLow {
-    int i = 0;
-    static Scanner sc = new Scanner(System.in);
-    static Random rando = new Random();
-    static int rando_val;
-    static String winner = "Nice. You got the right answer!";
+   public static void guesser(int min, int max) {
+       Scanner sc = new Scanner(System.in).useDelimiter("\n");
+       Random rando = new Random();
+       String winner = "Nice. You got the right answer!";
+       int rando_val = rando.nextInt(max) + min;
+       System.out.printf("Welcome! Guess a number between %s and %s!", min, max);
+       int userInput = sc.nextInt();
+       Boolean youWin = false;
+       int guessCounter = 0;
+        int remainingGuesses = 10;
 
-    public static void guesser(int min, int max){
-        System.out.printf("Welcome! Guess a number between %s and %s!", min, max);
-        int userInput = sc.nextInt();
-        rando_val = rando.nextInt(max) + min;
-        //begin the guessing
-        if (userInput == rando_val) {
-            System.out.println("I can't believe it! You guessed the number!");
-            return;
-        } else if (userInput < rando_val) {
-            System.out.println("Nope. Guess higher.");
-            guesser(min, max);
-        } else if (userInput > rando_val) {
-            System.out.println("Nope. Guess lower.");
-            guesser(min, max);
-        } else {
-            System.out.printf("No, I said type a number between %s and %s. Gosh. Try again.", min, max);
-            guesser(min,max);
-        } System.out.println(winner + "\nThanks for playing my game! Come again soon!!");
-    };
+       //begin the guessing
+       while (!youWin) {
+           remainingGuesses--;
+           if (userInput == rando_val) {
+               guessCounter++;
+               youWin = true;
+               System.out.printf("%s%n It took you %s guesses!%n Thanks for playing my game!%n", winner, guessCounter);
+               return;
+           } else if (userInput < rando_val && userInput > min) {
+               guessCounter++;
+               remainingGuesses--;
+               System.out.printf("%n*********************%nYou have %s guesses remaining.%n*********************%n%n", remainingGuesses);
+               if (guessCounter == 1) {
+                   System.out.printf("Nope. Guess higher. %nThat was your first guess. %nThere may still be some hope.%n");
+               } else { System.out.printf("Nope. Guess higher. You are at %s guesses. No pressure.%n", guessCounter);}
+           } else if (userInput > rando_val && userInput < max) {
+               remainingGuesses--;
+               guessCounter++;
+               System.out.printf("%n*********************%nYou have %s guesses remaining.%n*********************%n%n", remainingGuesses);
+               if (guessCounter == 1) {
+                   System.out.printf("Nope. Guess lower. %nThat was your first guess. %nThere may still be some hope.%n");
+               } else { System.out.printf("Nope. Guess lower. You are at %s guesses. No pressure.%n", guessCounter);}
+           } else {
+               remainingGuesses--;
+               guessCounter++;
+               System.out.printf("%n*********************%nYou have %s guesses remaining.%n*********************%n%n", remainingGuesses);
+               if (guessCounter == 1) {
+                   System.out.printf("Look.%nBruh.%nI told you to guess between 1 and 10.%nThat simple. That was your first guess. Try again.%n");
+               } else {
+                   System.out.printf("Why do you do this to yourself? %nPlease guess between the numbers of 1 and 10.%nThat makes %s guesses. Try again.%n", guessCounter);
+               }
+           }
+           userInput = sc.nextInt();
+       }
+   }
 
-
-    public static void main(String[] args) {
+   public static void main(String[] args) {
         guesser(1,10);
-
-
-
-
     }
 
 }
