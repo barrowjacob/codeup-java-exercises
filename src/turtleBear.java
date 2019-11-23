@@ -20,11 +20,11 @@ public class turtleBear {
         userName = sc.next();
         System.out.printf("%s, eh?", userName);
         sleepy(1000);
-        System.out.printf("Excellent. %nNow tell me, %s.", userName);
+        System.out.printf("%nExcellent. %nNow tell me, %s.", userName);
         sleepy(1000);
 
         do {
-            System.out.printf("%nDo you want to cheat and make your own enemy or play fairly and just let us do the talking? %n             Type \"CHEAT\" or \"PLAY FAIR\"%n", userName, userName);
+            System.out.printf("%nDo you want to cheat and make your own enemy or play fairly and just let us do the talking? %nType \"CHEAT\" or \"PLAY FAIR\"%n", userName, userName);
             String userCheat = sc.next();
             if (userCheat.equalsIgnoreCase("cheat")) {
                 System.out.printf("*Sigh* Okay, %s. Have it your way.%n", userName);
@@ -81,15 +81,15 @@ public class turtleBear {
             System.out.printf("You really aren't going to make this game very fun if you keep cheating like this.%n%n");
             sleepy(3000);
 
-            System.out.printf("Okay! Well, there we go. %nTwo mighty warriors preparing to face battle. %nLet's make sure I heard you correctly: %n%n");
-            sleepy(5000);
+            System.out.printf("Okay! Well, there we go.");
+            sleepy(1000);
+            System.out.printf("%nTwo mighty warriors preparing to face battle.");
+            sleepy(1000);
+            System.out.printf("%nLet's make sure I heard you correctly: %n%n");
+            sleepy(2000);
 
             System.out.printf("--------------  %n %s's Stats: %n -----------%n Strength: %s %n Speed: %s %n HP: %s %n ==============%n", userName, userStrength, userSpeed, userHealth);
-            try {
-                Thread.sleep(5000);
-            } catch (Exception e) {
-                System.out.println("yep");
-            }
+            sleepy(5000);
             System.out.printf("%s's Stats: %n -------------- %n Strength: %s %n Speed %s %n HP %s %n -----------%n%nIs this all correct?%n", enemyName, enemyStrength, enemySpeed, enemyHealth);
             String userConfirm = sc.next();
             if (userConfirm.equalsIgnoreCase("yes")) {
@@ -126,28 +126,46 @@ public class turtleBear {
         System.out.printf("Have you ever battled an angry TurtleBear?%n");
         String userResponse = sc.next();
         if (userResponse.equalsIgnoreCase("yes")) {
-            System.out.printf("Well then you're in luck! %nToday will be drastically different! %nToday you will fight the amorphous,%n");
+            System.out.printf("%nWell then you're in luck!%n");
+            sleepy(1000);
+            System.out.printf("%nToday will be drastically different!%n");
+            sleepy(1000);
+            System.out.printf("%nToday you will fight the amorphous,%n");
             amorphous();
             theFight();
         } else if (userResponse.equalsIgnoreCase("no")) {
-            System.out.printf("Well then you're in luck! %nToday will be no different!%nToday you will fight the amorphous,%n");
+            System.out.printf("%nWell then you're in luck!%n");
+            sleepy(1000);
+            System.out.printf("%nToday will be no different!%n");
+            sleepy(1000);
+            System.out.printf("%nToday you will fight the amorphous,%n");
             amorphous();
             theFight();
         } else {
-            System.out.printf("Oh, you think you're so clever, don't you? %n You think you can break the rules and get away with it? %n");
-            sleepy(3000);
-            System.out.printf("Well, now you're going to have to fight TWO Turtle Bears!%n How do you feel about that?");
+            System.out.printf("%nOh, you think you're so clever, don't you?%n");
             sleepy(1000);
-            System.out.printf("Wait... What?%n");
+            System.out.printf("%n You think you can break the rules and get away with it? %n%n");
+            sleepy(2000);
+            System.out.printf("Well, now you're going to have to fight TWO Turtle Bears!%n How do you feel about that?%n%n");
+            sleepy(2000);
+            System.out.printf("Wait... What?%n%n");
             sleepy(1000);
-            System.out.printf("Oh...%n");
+            System.out.printf("Oh...%n%n");
             sleepy(1000);
-            System.out.printf("They're telling me that we don't have any Turtle Bears for you to fight.");
+            System.out.printf("They're telling me that we don't have any Turtle Bears for you to fight.%n");
             sleepy(2000);
             System.out.printf("%nSpeaking of which...%n%n");
             journeyBegins();
         }
     }
+        static Random rando = new Random();
+        static int rando_int = rando.nextInt(4);
+        static int rando_intTwo = rando.nextInt(4);
+        static String[] firstName = new String[]{"Tilfor","Onslow","Patton","Northcliffe","James"};
+        static String[] lastName = new String[]{"Steamwraith", "Embersnare", "Dreamscream", "Vapor", "Franco"};
+        static String newEnemyName = firstName[rando_int] + " " + lastName[rando_intTwo];
+
+
 
     public static void amorphous() {
         sleepy(1000);
@@ -155,13 +173,14 @@ public class turtleBear {
         sleepy(1000);
         System.out.printf("maximum-kill-boss captain%n");
         sleepy(1000);
-        System.out.printf("of the slime-death army: %s.%n%n", enemyName);
-        sleepy(2000);
+        System.out.printf("of the slime-death army: %s!!%n%n", newEnemyName);
+        sleepy(4000);
         System.out.printf("And be warned! He's very strong.%n");
-        sleepy(1000);
+        sleepy(2000);
         System.out.printf("Unlike the Turtle Bear...%n");
-        sleepy(1000);
+        sleepy(2000);
         System.out.printf("Which would have been super great for you to fight.%n Oh well!%n%n");
+        sleepy(1000);
     }
 
     public static void theFight() {
