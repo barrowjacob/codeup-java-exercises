@@ -159,28 +159,34 @@ public class turtleBear {
         }
     }
         static Random rando = new Random();
-        static int rando_int = rando.nextInt(4);
-        static int rando_intTwo = rando.nextInt(4);
-        static String[] firstName = new String[]{"Tilfor","Onslow","Patton","Northcliffe","James"};
-        static String[] lastName = new String[]{"Steamwraith", "Embersnare", "Dreamscream", "Vapor", "Franco"};
+        static int rando_int = rando.nextInt(9);
+        static int rando_intTwo = rando.nextInt(9);
+        static int randoStrength = rando.nextInt(9);
+        static int randoHealth = rando.nextInt(9);
+        static int randoSpeed = rando.nextInt(9);
+
+        static String[] firstName = new String[]{"Tilfor","Onslow","Patton","Northcliffe","James", "Rider", "Goldgaze", "Silverpelt", "JW", "Jacob"};
+        static String[] lastName = new String[]{"Steamwraith", "Embersnare", "Dreamscream", "Vapor", "Franco", "Duskbluff", "Goreflare", "Dawntoe", "Barrow", "Hester"};
         static String newEnemyName = firstName[rando_int] + " " + lastName[rando_intTwo];
+        static int[] stats = new int[]{1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+        static int newEnemyStrength = stats[randoStrength];
+        static int newEnemySpeed = stats[randoSpeed];
+        static int newEnemyHealth = stats[randoHealth];
+
 
 
 
     public static void amorphous() {
-        sleepy(1000);
+        sleepy(1500);
         System.out.printf("nuclear-powered,%n");
-        sleepy(1000);
+        sleepy(1500);
         System.out.printf("maximum-kill-boss captain%n");
-        sleepy(1000);
+        sleepy(1500);
         System.out.printf("of the slime-death army: %s!!%n%n", newEnemyName);
+        sleepy(3000);
+        System.out.printf("%n====================%n%s's Stats:%n---------------------%nStrength: %s%nSpeed: %s%nHP: %s%n============%n",newEnemyName, newEnemyStrength, newEnemySpeed, newEnemyHealth);
         sleepy(4000);
-        System.out.printf("And be warned! He's very strong.%n");
-        sleepy(2000);
-        System.out.printf("Unlike the Turtle Bear...%n");
-        sleepy(2000);
-        System.out.printf("Which would have been super great for you to fight.%n Oh well!%n%n");
-        sleepy(1000);
+        System.out.printf("Prepare yourself...%n");
     }
 
     public static void theFight() {
