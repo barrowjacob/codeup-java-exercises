@@ -67,24 +67,24 @@ public class MethodsExercise {
 //            return newInput;
 //        }
 //
-//        public static Integer factorialMaker() {
-//            System.out.println("Please enter an integer between 1 and 10");
-//            Scanner scanner = new Scanner(System.in);
-//            int newInput = scanner.nextInt();
-//            System.out.println(newInput);
-//            if (newInput < 10 && newInput > 0) {
-//                System.out.println("Do you want to continue?");
-//                String newNewInput = scanner.nextLine();
-//                if (newNewInput.equalsIgnoreCase("yes")) {
-//                    for (int i = newInput -1; i > 0; i--) {
-//                        newInput *= (i);
-//                    }
-//                }
-//            } else {
-//                return factorialMaker();
-//            }
-//            return newInput;
-//        }
+        public static Integer factorialMaker() {
+            System.out.println("Please enter an integer between 1 and 10");
+            Scanner scanner = new Scanner(System.in);
+            int newInput = scanner.nextInt();
+            System.out.println(newInput);
+            if (newInput < 10 && newInput > 0) {
+                System.out.println("Do you want to continue?");
+                String newNewInput = scanner.nextLine();
+                if (newNewInput.equalsIgnoreCase("yes")) {
+                    for (int i = newInput -1; i > 0; i--) {
+                        newInput *= (i);
+                    }
+                }
+            } else {
+                return factorialMaker();
+            }
+            return newInput;
+        }
 
     static Scanner scanner = new Scanner(System.in);
         public static void dice() {

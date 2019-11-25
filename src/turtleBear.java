@@ -5,8 +5,12 @@ public class turtleBear {
     static String userName;
     static String firstName;
     static String enemyName;
+    static int enemyStrength = 0;
+    static int enemyHealth = 0;
+    static int enemyGuard = 0;
     static Scanner sc = new Scanner(System.in).useDelimiter("\n");
     static int i = 0;
+    static int j = 0;
 
     //*********************//
     // BEGIN SETTING IT UP //
@@ -40,13 +44,13 @@ public class turtleBear {
         sleepy(2500);
         System.out.printf("Okay... Let's get this show on the road!!%n%n");
         sleepy(3000);
-        System.out.printf("Are you prepared to fight in%n");
+        System.out.printf("Are you prepared to fight in the%n");
         sleepy(1500);
-        System.out.printf("EXTREME%n");
+        System.out.printf("MOST EXTREME,%n");
         sleepy(1000);
-        System.out.printf("ONE ON ONE%n");
+        System.out.printf("ONE ON ONE,%n");
         sleepy(1000);
-        System.out.printf("MAXIMUM%n");
+        System.out.printf("MAXIMUM,%n");
         sleepy(1000);
         System.out.printf("EXTREME COMBAT?%n");
         String userInput = sc.next();
@@ -64,7 +68,7 @@ public class turtleBear {
         System.out.printf("I'm sure your parents are very proud of you.%n");
         sleepy(1500);
         System.out.printf("%nNow tell me, %s.", userName);
-        sleepy(2500);
+        sleepy(1500);
 
         do {
             System.out.printf("%nDo you want to cheat and DESIGN your own enemy%n");
@@ -105,8 +109,7 @@ public class turtleBear {
             System.out.printf("%nYou gave yourself all 10's?");
             sleepy(1500);
             System.out.printf("%nWell, whatever. Let's keep going.%n%n");
-        }
-        ;
+        };
         sleepy(1500);
 
         //*********************//
@@ -114,6 +117,7 @@ public class turtleBear {
         //*********************//
 
         System.out.printf("Tell me, mighty warrior: %nWhat is the name of the foe you will face in glorious combat? Name: %n");
+        j++;
         enemyName = sc.next();
         System.out.printf("And what is %s's strength? STRENGTH: (1-10)%n", enemyName);
         byte enemyStrength = sc.nextByte();
@@ -122,19 +126,12 @@ public class turtleBear {
         System.out.printf("Is their health even comparable to yours? HP: (1-10)%n");
         byte enemyHealth = sc.nextByte();
         if (enemyStrength == 1 && enemyGuard == 1 && enemyHealth == 1) {
-            try {
-                Thread.sleep(1000);
-            } catch (Exception e) {
-                System.out.println("yep");
-            }
+            sleepy(1000);
             System.out.printf("......%n%n");
-            try {
-                Thread.sleep(1500);
-            } catch (Exception e) {
-                System.out.println("yep");
-            }
+           sleepy(1500);
             System.out.printf("You really aren't going to make this game very fun if you keep cheating like this.%n%n");
             sleepy(3000);
+        }
 
             //******************//
             // CONFIRMING STATS //
@@ -160,7 +157,8 @@ public class turtleBear {
                 characterCreation();
             }
         }
-    }
+
+
 
     //***************//
     //  PRE-JOURNEY  //
@@ -185,6 +183,12 @@ public class turtleBear {
     //****************//
 
     public static void journeyBegins() {
+        if (j > 0) {
+            newEnemyName = enemyName;
+            newEnemyStrength = enemyStrength;
+            newEnemyGuard = enemyGuard;
+            newEnemyHealth = enemyHealth;
+        }
         System.out.printf("Have you ever battled an angry TurtleBear?%n");
         String userResponse = sc.next();
         if (userResponse.equalsIgnoreCase("yes")) {
@@ -243,9 +247,9 @@ public class turtleBear {
             //***********//
             // YOUR TURN //
             //***********//
-
+                userBonusDefense = 0;
                 if (userMove.equalsIgnoreCase("attack")) {
-                    if (newEnemyGuard >= newUserStrength) {
+                    if (newEnemyGuard + enemyBonusDefense >= newUserStrength) {
                         newEnemyHealth--;
                         sleepy(2000);
                         System.out.printf("You attacked for %d hit points! %s's health is now  %d%n", newUserStrength, newEnemyName, newEnemyHealth);
@@ -266,7 +270,7 @@ public class turtleBear {
                     }
 
                 } else if (userMove.equalsIgnoreCase("defend")) {
-                    newUserGuard += 10;
+                    userBonusDefense += 10;
                     System.out.printf("Your defense is now SUPERCHARGED!%n");
                     sleepy(2000);
                 } else if (userMove.equalsIgnoreCase("flee")) {
@@ -285,7 +289,7 @@ public class turtleBear {
             System.out.printf("He's going to " + enemyChoices[enemyChoice] + "%n");
             sleepy(2000);
             if (enemyChoices[enemyChoice].equalsIgnoreCase("attack")) {
-                if (newUserGuard >= newEnemyStrength) {
+                if (newUserGuard + userBonusDefense >= newEnemyStrength) {
                     newUserHealth--;
                     System.out.printf("He attacked for %d and your health is now %d%n", newEnemyStrength, newUserHealth);
                     sleepy(3000);
@@ -303,7 +307,7 @@ public class turtleBear {
                     }
                 }
             } else if (enemyChoices[enemyChoice].equalsIgnoreCase("defend")) {
-                newEnemyGuard += 10;
+                enemyBonusDefense += 10;
                 sleepy(2000);
             }
         }
@@ -324,6 +328,8 @@ public class turtleBear {
     static int newUserHealth = rando.nextInt(10)+1;
     static int newUserGuard = rando.nextInt(10)+1;
     static int enemyChoice = rando.nextInt(1);
+    static int userBonusDefense = 0;
+    static int enemyBonusDefense = 0;
 
     //******************//
     // GENERATOR ARRAYS //
