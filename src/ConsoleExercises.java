@@ -33,9 +33,9 @@ public class ConsoleExercises {
 
 //
 //        System.out.print("Enter length, width and height");
-//        String classLength = scanner.next();
-//        String classWidth = scanner.next();
-//        String classHeight = scanner.next();
+//        String classLength = scanner.nextLine();
+//        String classWidth = scanner.nextLine();
+//        String classHeight = scanner.nextLine();
 //        float newLength = Float.parseFloat(classLength);
 //        float newWidth = Float.parseFloat(classWidth);
 //        float newHeight = Float.parseFloat(classHeight);

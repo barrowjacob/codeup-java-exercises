@@ -5,7 +5,7 @@ public class StringsLecStudent {
         Scanner sc = new Scanner(System.in).useDelimiter("\n");
         System.out.println("Please enter your name:");
 
-        String input = sc.next();
+        String input = sc.nextLine();
 
         String name = "Jane Doe";
 

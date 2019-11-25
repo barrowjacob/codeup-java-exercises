@@ -3,6 +3,7 @@ import java.util.Random;
 
 public class turtleBear {
     static String userName;
+    static String firstName;
     static String enemyName;
     static Scanner sc = new Scanner(System.in).useDelimiter("\n");
     static int i = 0;
@@ -16,10 +17,33 @@ public class turtleBear {
 
     //set everything up
     public static void settingUp() {
-        System.out.printf("Greetings individual! %n");
+        System.out.printf("%n%nGreetings human!! %n");
         sleepy(1000);
+        System.out.printf("Welcome to...%n%n");
+        sleepy(1500);
+        System.out.println("  ____  _                   __   _____ _          \n" +
+                " |  _ \\(_)___  ___    ___  / _| |_   _| |__   ___ \n" +
+                " | |_) | / __|/ _ \\  / _ \\| |_    | | | '_ \\ / _ \\\n" +
+                " |  _ <| \\__ \\  __/ | (_) |  _|   | | | | | |  __/\n" +
+                " |_| \\_\\_|___/\\___|  \\___/|_|     |_| |_| |_|\\___|\n" +
+                "                                                  ");
+        System.out.printf(" _____ _   _______ _____ _      _____  ______ _____  ___  ______ \n" +
+                "|_   _| | | | ___ \\_   _| |    |  ___| | ___ \\  ___|/ _ \\ | ___ \\\n" +
+                "  | | | | | | |_/ / | | | |    | |__   | |_/ / |__ / /_\\ \\| |_/ /\n" +
+                "  | | | | | |    /  | | | |    |  __|  | ___ \\  __||  _  ||    / \n" +
+                "  | | | |_| | |\\ \\  | | | |____| |___  | |_/ / |___| | | || |\\ \\ \n" +
+                "  \\_/  \\___/\\_| \\_| \\_/ \\_____/\\____/  \\____/\\____/\\_| |_/\\_| \\_|%n%n");
+        sleepy(4000);
+        System.out.printf("This is an automated text adventure, which means that the prompts will go ahead on their own!%n%n");
+        sleepy(2500);
+        System.out.printf("No need to press \"ENTER\" or anything silly like that when the narration is going on.%n%n");
+        sleepy(2500);
+        System.out.printf("Feel free to press it when you're done with your responses, though!%n%n");
+        sleepy(2500);
+        System.out.printf("Well then let's get this show on the road!!%n%n");
+        sleepy(3000);
         System.out.printf("Are you prepared to fight in%n");
-        sleepy(1000);
+        sleepy(1500);
         System.out.printf("EXTREME%n");
         sleepy(1000);
         System.out.printf("ONE ON ONE%n");
@@ -35,13 +59,21 @@ public class turtleBear {
         }
         System.out.printf("What is your name?%n");
         userName = sc.next();
-        System.out.printf("%s, eh?%n", userName);
+        System.out.printf("%s, eh?%n",userName);
         sleepy(1500);
-        System.out.printf("%nSounds like the name of a winner!%n Now tell me, %s.", userName);
+        System.out.printf("%nSounds like the epic name of a super-winner! %n");
+        sleepy(1500);
+        System.out.printf("I'm sure your parents are very proud of you.%n");
+        sleepy(1500);
+        System.out.printf("%nNow tell me, %s.", userName);
         sleepy(2500);
 
         do {
-            System.out.printf("%nDo you want to cheat and DESIGN your own enemy or play fairly and just let us do the talking? %nType \"CHEAT\" or \"PLAY FAIR\"%n");
+            System.out.printf("%nDo you want to cheat and DESIGN your own enemy%n");
+            sleepy(1500);
+            System.out.printf("or play fairly and just let us do the talking? %n");
+            sleepy(1500);
+            System.out.printf("Type \"CHEAT\" or \"PLAY FAIR\"%n");
             String userCheat = sc.next();
             if (userCheat.equalsIgnoreCase("cheat")) {
                 System.out.printf("*Sigh* Okay, %s. Have it your way.%n", userName);
@@ -51,7 +83,7 @@ public class turtleBear {
                 newJourney();
                 return;
             } else {
-                userCheat = sc.next();
+                System.out.printf("That's not an option, I'm afraid.");
             }
         } while (true);
     }
@@ -123,7 +155,7 @@ public class turtleBear {
 
     //start the journey
     public static void newJourney() {
-        System.out.printf("%n---------------------%nHere begins the new journey!%n---------------------%n");
+        System.out.printf("%n==========================%nTHE JOURNEY%n==========================%n");
 //        System.out.printf("I haven't made any more in the game...%n Please try to \"cheat\" if you haven't seen that functionality yet! %nand then, while cheating, might as well give yourself all 10's,%n and then enemy all 1's... you know. %nJust to see what would happen...");
         System.out.printf("You find yourself staring at a brightly lit computer screen, %nreading a text prompt in the guise of a role-playing game. What would you like to do?%n%n");
         String badInput = sc.next();
@@ -159,10 +191,10 @@ public class turtleBear {
         } else if (i > 0) {
             System.out.println("You think you're clever, don't you?");
             sleepy(1500);
-            System.out.printf("%n You think you can break the rules and get away with it? %n%n");
+            System.out.printf("%nYou think you can just go around breaking the rules and get away with it? %n%n");
             sleepy(2000);
             System.out.printf("Well, now you're going to have to fight TWO Turtle Bears!");
-            sleepy(2000);
+            sleepy(3000);
             System.out.printf("%n How do you feel about that?%n%n");
             sleepy(2000);
             System.out.printf("Wait... %n%n");
@@ -174,7 +206,7 @@ public class turtleBear {
             System.out.printf("%nSpeaking of which...%n%n");
             journeyBegins();
         } else {
-            System.out.printf("%n Type \"YES\" or \"NO\", please.");
+            System.out.printf("%n Type \"YES\" or \"NO\", please.%n");
             i++;
             journeyBegins();
 
@@ -193,9 +225,9 @@ public class turtleBear {
         static int enemyChoice = rando.nextInt(1);
 
         //GENERATOR ARRAYS
-        static String[] firstName = new String[]{"Tilfor","Onslow","Patton","Northcliffe","James", "Rider", "Goldgaze", "Silverpelt", "JW", "Jacob"};
-        static String[] lastName = new String[]{"Steamwraith", "Embersnare", "Dreamscream", "Vapor", "Franco", "Duskbluff", "Goreflare", "Dawntoe", "Barrow", "Hester"};
-        static String newEnemyName = firstName[rando_int] + " " + lastName[rando_intTwo];
+        static String[] firstEvilName = new String[]{"Tilfor","Onslow","Patton","Northcliffe","James", "Rider", "Goldgaze", "Silverpelt", "JW", "Jacob"};
+        static String[] lastEvilName = new String[]{"Steamwraith", "Embersnare", "Dreamscream", "Vapor", "Franco", "Duskbluff", "Goreflare", "Dawntoe", "Barrow", "Hester"};
+        static String newEnemyName = firstEvilName[rando_int] + " " + lastEvilName[rando_intTwo];
         static int[] stats = new int[]{1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
         static int[] userStats = new int[]{1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
         static String[] enemyChoices = new String[]{"ATTACK", "DEFENSE"};
@@ -219,7 +251,7 @@ public class turtleBear {
         sleepy(1500);
         System.out.printf("captain of the slime-death army: %s!!%n%n", newEnemyName);
         sleepy(3000);
-        System.out.printf("%n====================%n%s's Stats:%n---------------------%nStrength: %d%DEFENSE: %d%nHP: %d%n============%n",newEnemyName, newEnemyStrength, newEnemyGuard, newEnemyHealth);
+        System.out.printf("%n====================%n%s's Stats:%n---------------------%nStrength: %d%nDEFENSE: %d%nHP: %d%n============%n",newEnemyName, newEnemyStrength, newEnemyGuard, newEnemyHealth);
         sleepy(4000);
         System.out.printf("%n====================%n%s's Stats:%n---------------------%nStrength: %d%nDEFENSE: %d%nHP: %d%n============%n", userName, newUserStrength, newUserGuard, newUserHealth);
         System.out.printf("Prepare yourself...%n");
@@ -258,6 +290,7 @@ public class turtleBear {
 
                 } else if (userMove.equalsIgnoreCase("defend")) {
                     newUserGuard += 10;
+                    System.out.printf("Your defense is now SUPERCHARGED!%n");
                     sleepy(2000);
                 } else if (userMove.equalsIgnoreCase("flee")) {
                     System.out.println("You can't escape.");
@@ -279,7 +312,7 @@ public class turtleBear {
                     newUserHealth--;
                     System.out.printf("He attacked for %d and your health is now %d%n", newEnemyStrength, newUserHealth);
                     sleepy(3000);
-                    if (newUserHealth < 0) {
+                    if (newUserHealth < 1) {
                         loseCredits();
                         return;
                     }
@@ -287,7 +320,7 @@ public class turtleBear {
                     newUserHealth -= newEnemyStrength;
                     System.out.printf("He attacked for %d and your health is now %d%n", newEnemyStrength, newUserHealth);
                     sleepy(3000);
-                    if (newUserHealth < 0) {
+                    if (newUserHealth < 1) {
                         loseCredits();
                         return;
                     }

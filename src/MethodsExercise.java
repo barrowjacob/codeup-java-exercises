@@ -74,7 +74,7 @@ public class MethodsExercise {
 //            System.out.println(newInput);
 //            if (newInput < 10 && newInput > 0) {
 //                System.out.println("Do you want to continue?");
-//                String newNewInput = scanner.next();
+//                String newNewInput = scanner.nextLine();
 //                if (newNewInput.equalsIgnoreCase("yes")) {
 //                    for (int i = newInput -1; i > 0; i--) {
 //                        newInput *= (i);
