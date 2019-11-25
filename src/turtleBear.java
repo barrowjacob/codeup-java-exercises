@@ -59,12 +59,27 @@ public class turtleBear {
                 " |  _ <| \\__ \\  __/ | (_) |  _|   | | | | | |  __/\n" +
                 " |_| \\_\\_|___/\\___|  \\___/|_|     |_| |_| |_|\\___|\n" +
                 "                                                  ");
-        System.out.printf(" _____ _   _______ _____ _      _____  ______ _____  ___  ______ \n" +
+        System.out.println(" _____ _   _______ _____ _      _____  ______ _____  ___  ______ \n" +
                 "|_   _| | | | ___ \\_   _| |    |  ___| | ___ \\  ___|/ _ \\ | ___ \\\n" +
                 "  | | | | | | |_/ / | | | |    | |__   | |_/ / |__ / /_\\ \\| |_/ /\n" +
                 "  | | | | | |    /  | | | |    |  __|  | ___ \\  __||  _  ||    / \n" +
                 "  | | | |_| | |\\ \\  | | | |____| |___  | |_/ / |___| | | || |\\ \\ \n" +
-                "  \\_/  \\___/\\_| \\_| \\_/ \\_____/\\____/  \\____/\\____/\\_| |_/\\_| \\_|%n%n");
+                "  \\_/  \\___/\\_| \\_| \\_/ \\_____/\\____/  \\____/\\____/\\_| |_/\\_| \\_|");
+        System.out.println(" :\"'._..---.._.'\";                  ___-------___\n" +
+                " `.             .'              _-~~             ~~-_\n" +
+                "  .'    ^   ^    `.         _-~                    /~-_\n" +
+                " :      a   a      :      /~  \\                   /    \\\n" +
+                " :     _.-0-._     :     /      \\_______________/        \\\n" +
+                "  :  .'   :   `.  :   /       /                \\          \\\n" +
+                "   `.: '--'--' :.'   /      /                    \\          \\\n" +
+                "      `._`-'_.'     /______/                        \\_________ \\\n" +
+                "        '\"'   \\   /         \\                      /            \\\n" +
+                "        \\        \\^\\\\         \\                  /               \\     /\n" +
+                "         \\         ||           \\______________/      _-_       //\\__//\n" +
+                "           \\       ||------_-~~-_ ------------- \\ --/~   ~\\    || __/\n" +
+                "             ~-----||====/~     |==================|       |/~~~~~\n" +
+                "              (_(__/  ./     /                    \\_\\      \\.\n" +
+                "                   (_(___/                         \\_____)_)");
 
         sleepy(4000);
         System.out.printf("This is an automated text adventure, which means that the prompts will go ahead on their own!%n%n");
@@ -296,7 +311,7 @@ public class turtleBear {
     public static void theFight(String enemyName, int enemyHealth, int enemyGuard, int enemyStrength, String userName, int userHealth, int userGuard, int userStrength) {
         System.out.printf("=========================================%nTIME TO FIGHT%n=========================================%n");
         while(true) {
-            System.out.printf("%n%n===========================================%n%n| CHOOSE YOUR MOVE |           YOUR STATS |%n------------------------------------------- %n| ATTACK |               YOUR STRENGTH: %d |%n| DEFEND |                  YOUR DEFENSE: %d |%n| FLEE |                       YOUR HP: %d |%n", newUserStrength, newUserGuard, newUserHealth);
+            System.out.printf("%n%n===========================================%n%n| CHOOSE YOUR MOVE |           YOUR STATS |%n------------------------------------------- %n| ATTACK |               YOUR STRENGTH: %d |%n| DEFEND |                  YOUR DEFENSE: %d |%n| PRAY |                       YOUR HP: %d |%n", newUserStrength, newUserGuard, newUserHealth);
             System.out.printf("===========================================%n");
             sleepy(3000);
             String userMove = sc.next();
@@ -330,8 +345,8 @@ public class turtleBear {
                 userBonusDefense += 10;
                 System.out.printf("Your defense is now SUPERCHARGED!%n");
                 sleepy(2000);
-            } else if (userMove.equalsIgnoreCase("flee")) {
-                System.out.println("You can't escape.");
+            } else if (userMove.equalsIgnoreCase("pray")) {
+                System.out.println(userName + "'s prayer is heard by God.  You feel invigorated and recover " + (newUserHealth += 2) + " health!");
                 sleepy(2000);
             } else {
                 System.out.println("You stand around, sipping tea and thinking about Yu-Gi-Oh, rather than do anything productive with your life. YOU FORFEIT YOUR TURN.");
@@ -354,7 +369,7 @@ public class turtleBear {
                         loseCredits();
                         return;
                     }
-                } else {
+                } else if (newUserGuard + userBonusDefense < newEnemyStrength){
                     newUserHealth -= newEnemyStrength;
                     System.out.printf("He attacked for %d and your health is now %d%n", newEnemyStrength, newUserHealth);
                     sleepy(3000);
@@ -362,6 +377,7 @@ public class turtleBear {
                         loseCredits();
                         return;
                     }
+
                 }
             } else if (enemyChoices[enemyChoice].equalsIgnoreCase("defend")) {
                 enemyBonusDefense += 10;
@@ -392,11 +408,69 @@ public class turtleBear {
     //*****************//
 
     public static void winCredits() {
-        System.out.printf("Great job! You won!%n%n-----------%nGAME OVER!%n-----------%n");
+        System.out.printf(" _____                             _         _       _   _                 _  \n" +
+                "/  __ \\                           | |       | |     | | (_)               | | \n" +
+                "| /  \\/ ___  _ __   __ _ _ __ __ _| |_ _   _| | __ _| |_ _  ___  _ __  ___| | \n" +
+                "| |    / _ \\| '_ \\ / _` | '__/ _` | __| | | | |/ _` | __| |/ _ \\| '_ \\/ __| | \n" +
+                "| \\__/\\ (_) | | | | (_| | | | (_| | |_| |_| | | (_| | |_| | (_) | | | \\__ \\_| \n" +
+                " \\____/\\___/|_| |_|\\__, |_|  \\__,_|\\__|\\__,_|_|\\__,_|\\__|_|\\___/|_| |_|___(_) \n" +
+                "                    __/ |                                                     \n" +
+                "                   |___/                                                      \n" +
+                "__   __                     _       _                                         \n" +
+                "\\ \\ / /                    (_)     | |                                        \n" +
+                " \\ V /___  _   _  __      ___ _ __ | |                                        \n" +
+                "  \\ // _ \\| | | | \\ \\ /\\ / / | '_ \\| |                                        \n" +
+                "  | | (_) | |_| |  \\ V  V /| | | | |_|                                        \n" +
+                "  \\_/\\___/ \\__,_|   \\_/\\_/ |_|_| |_(_)                                        \n" +
+                "                                                                              \n" +
+                "                                                ");
+        System.out.println(" :\"'._..---.._.'\";                  ___-------___\n" +
+                " `.             .'              _-~~             ~~-_\n" +
+                "  .'             `.         _-~                    /~-_\n" +
+                " :      X   X      :      /~  \\                   /    \\\n" +
+                " :     _.-0-._     :     /      \\_______________/        \\\n" +
+                "  :  .'   :   `.  :   /       /                \\          \\\n" +
+                "   `.: '--'--' :.'   /      /                    \\          \\\n" +
+                "      `._`-'_.'     /______/                        \\_________ \\\n" +
+                "         |||       /         \\                      /            \\\n" +
+                "         |||       \\\\         \\                  /               \\  \n" +
+                "         |||      ||           \\______________/      _-_       //\\_\n" +
+                "         |||     ||------_-~~-_ ------------- \\ --/~   ~\\    || __/\n" +
+                "         |||    -||====/~     |==================|       |/~~~~~");
     }
 
     public static void loseCredits() {
-        System.out.printf("Ouch. You dead. :( %n%n-----------%nGAME OVER!%n-----------%n");
+        System.out.println(" _____            _        __   __                _                _          __\n" +
+                "|  _  |          | |       \\ \\ / /               | |              | |    _   / /\n" +
+                "| | | |_   _  ___| |__      \\ V /___  _   _    __| | ___  __ _  __| |   (_) | | \n" +
+                "| | | | | | |/ __| '_ \\      \\ // _ \\| | | |  / _` |/ _ \\/ _` |/ _` |       | | \n" +
+                "\\ \\_/ / |_| | (__| | | |_    | | (_) | |_| | | (_| |  __/ (_| | (_| |_   _  | | \n" +
+                " \\___/ \\__,_|\\___|_| |_(_)   \\_/\\___/ \\__,_|  \\__,_|\\___|\\__,_|\\__,_(_) (_) | | \n" +
+                "                                                                             \\_\\\n" +
+                "                                                                                \n" +
+                " _____   ___  ___  ___ _____   _____  _   _ ___________                         \n" +
+                "|  __ \\ / _ \\ |  \\/  ||  ___| |  _  || | | |  ___| ___ \\                        \n" +
+                "| |  \\// /_\\ \\| .  . || |__   | | | || | | | |__ | |_/ /                        \n" +
+                "| | __ |  _  || |\\/| ||  __|  | | | || | | |  __||    /                         \n" +
+                "| |_\\ \\| | | || |  | || |___  \\ \\_/ /\\ \\_/ / |___| |\\ \\                         \n" +
+                " \\____/\\_| |_/\\_|  |_/\\____/   \\___/  \\___/\\____/\\_| \\_|                        \n" +
+                "                                                                                \n" +
+                "                                                                    ");
+        System.out.println(" :\"'._..---.._.'\";                  ___-------___\n" +
+                " `.             .'              _-~~             ~~-_\n" +
+                "  .'    ^   ^    `.         _-~                    /~-_\n" +
+                " :      a   a      :      /~  \\                   /    \\\n" +
+                " :     _.-0-._     :     /      \\_______________/        \\\n" +
+                "  :  .'   :   `.  :   /       /                \\          \\\n" +
+                "   `.: '--'--' :.'   /      /                    \\          \\\n" +
+                "      `._`-'_.'     /______/                       \\_________ \\\n" +
+                "        '\"'   \\   /         \\                      /            \\\n" +
+                "        \\        \\^\\\\         \\                  /               \\     /\n" +
+                "         \\         ||           \\______________/      _-_       //\\__//\n" +
+                "           \\       ||------_-~~-_ ------------- \\ --/~   ~\\    || __/\n" +
+                "             ~-----||====/~     |==================|       |/~~~~~\n" +
+                "              (_(__/  ./     /                    \\_\\      \\.\n" +
+                "                   (_(___/                         \\_____)_)\n");
     }
     public static void main(String[] args) {
         settingUp();
@@ -406,8 +480,3 @@ public class turtleBear {
 }
 
 
-//NOTAS
-// FIX FIGHT ON "CHEAT" MODE TO REFLECT INPUTTED STATS
-// THE FIGHT DOESN'T ALWAYS END IF YOU WIN!!
-// FIX TIMING AND SPACING
-// CARRY ON
