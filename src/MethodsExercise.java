@@ -107,16 +107,21 @@ public class MethodsExercise {
 //
 
     public static String guess() {
-        do {
+
             Random rando = new Random();
             int target = rando.nextInt(1000) + 25;
             System.out.println("Give me a number to guess!");
             Scanner sc = new Scanner(System.in);
             int userInput = sc.nextInt();
+        do {
             if (userInput > target) {
                 System.out.println("Guess lower!");
+                userInput = sc.nextInt();
+
             } else if (userInput < target) {
                 System.out.println("Guess higher");
+                userInput = sc.nextInt();
+
             } else {
                 System.out.println("You got it! WOW!");
                 return "WOW BRO WOW";
