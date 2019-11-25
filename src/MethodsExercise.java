@@ -67,42 +67,66 @@ public class MethodsExercise {
 //            return newInput;
 //        }
 //
-        public static Integer factorialMaker() {
-            System.out.println("Please enter an integer between 1 and 10");
-            Scanner scanner = new Scanner(System.in);
-            int newInput = scanner.nextInt();
-            System.out.println(newInput);
-            if (newInput < 10 && newInput > 0) {
-                System.out.println("Do you want to continue?");
-                String newNewInput = scanner.nextLine();
-                if (newNewInput.equalsIgnoreCase("yes")) {
-                    for (int i = newInput -1; i > 0; i--) {
-                        newInput *= (i);
-                    }
-                }
-            } else {
-                return factorialMaker();
-            }
-            return newInput;
-        }
+//        public static Integer factorialMaker() {
+//            System.out.println("Please enter an integer between 1 and 10");
+//            Scanner scanner = new Scanner(System.in);
+//            int newInput = scanner.nextInt();
+//            System.out.println(newInput);
+//            if (newInput < 10 && newInput > 0) {
+//                System.out.println("Do you want to continue?");
+//                String newNewInput = scanner.nextLine();
+//                if (newNewInput.equalsIgnoreCase("yes")) {
+//                    for (int i = newInput -1; i > 0; i--) {
+//                        newInput *= (i);
+//                    }
+//                }
+//            } else {
+//                return factorialMaker();
+//            }
+//            return newInput;
+//        }
+//
+//    static Scanner scanner = new Scanner(System.in);
+//        public static void dice() {
+//            System.out.println("Please enter how many sides are on your make believe dice!");
+//            int diceSides = scanner.nextInt();
+//            System.out.println(diceSides);
+//            System.out.println("Would you like to roll? Yes or no");
+//            String roll = scanner.next();
+//            if (roll.equalsIgnoreCase("yes")) {
+//                for (int i = 0; i < 2; i++) {
+//                    Random diceRoll = new Random();
+//                    int newDiceRoll = diceRoll.nextInt(diceSides - 1) + 1;
+//                    System.out.println(newDiceRoll);
+//                }
+//            } else {
+//                dice();
+//            }
+//        }
+//
+//
 
-    static Scanner scanner = new Scanner(System.in);
-        public static void dice() {
-            System.out.println("Please enter how many sides are on your make believe dice!");
-            int diceSides = scanner.nextInt();
-            System.out.println(diceSides);
-            System.out.println("Would you like to roll? Yes or no");
-            String roll = scanner.next();
-            if (roll.equalsIgnoreCase("yes")) {
-                for (int i = 0; i < 2; i++) {
-                    Random diceRoll = new Random();
-                    int newDiceRoll = diceRoll.nextInt(diceSides - 1) + 1;
-                    System.out.println(newDiceRoll);
-                }
+    public static String guess() {
+        do {
+            Random rando = new Random();
+            int target = rando.nextInt(1000) + 25;
+            System.out.println("Give me a number to guess!");
+            Scanner sc = new Scanner(System.in);
+            int userInput = sc.nextInt();
+            if (userInput > target) {
+                System.out.println("Guess lower!");
+            } else if (userInput < target) {
+                System.out.println("Guess higher");
             } else {
-                dice();
+                System.out.println("You got it! WOW!");
+                return "WOW BRO WOW";
             }
-        }
+        } while(true);
+    }
+
+
+
+
 
 
             public static void main(String[] args){
