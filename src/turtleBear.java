@@ -7,20 +7,17 @@ public class turtleBear {
     static String enemyName;
     static Scanner sc = new Scanner(System.in).useDelimiter("\n");
     static int i = 0;
-    public static void sleepy(int num) {
-        try {
-            Thread.sleep(num);
-        } catch (Exception e) {
-            System.out.println("yep");
-        }
-    }
 
-    //set everything up
+    //*********************//
+    // BEGIN SETTING IT UP //
+    //*********************//
+
     public static void settingUp() {
         System.out.printf("%n%nGreetings human!! %n");
         sleepy(1000);
         System.out.printf("Welcome to...%n%n");
         sleepy(1500);
+
         System.out.println("  ____  _                   __   _____ _          \n" +
                 " |  _ \\(_)___  ___    ___  / _| |_   _| |__   ___ \n" +
                 " | |_) | / __|/ _ \\  / _ \\| |_    | | | '_ \\ / _ \\\n" +
@@ -33,14 +30,15 @@ public class turtleBear {
                 "  | | | | | |    /  | | | |    |  __|  | ___ \\  __||  _  ||    / \n" +
                 "  | | | |_| | |\\ \\  | | | |____| |___  | |_/ / |___| | | || |\\ \\ \n" +
                 "  \\_/  \\___/\\_| \\_| \\_/ \\_____/\\____/  \\____/\\____/\\_| |_/\\_| \\_|%n%n");
+
         sleepy(4000);
         System.out.printf("This is an automated text adventure, which means that the prompts will go ahead on their own!%n%n");
-        sleepy(2500);
+        sleepy(2000);
         System.out.printf("No need to press \"ENTER\" or anything silly like that when the narration is going on.%n%n");
+        sleepy(2000);
+        System.out.printf("Feel free to press \"ENTER\" when you're done with your responses, though!%n%n");
         sleepy(2500);
-        System.out.printf("Feel free to press it when you're done with your responses, though!%n%n");
-        sleepy(2500);
-        System.out.printf("Well then let's get this show on the road!!%n%n");
+        System.out.printf("Okay... Let's get this show on the road!!%n%n");
         sleepy(3000);
         System.out.printf("Are you prepared to fight in%n");
         sleepy(1500);
@@ -88,6 +86,10 @@ public class turtleBear {
         } while (true);
     }
 
+    //********************//
+    // DESIGNING YOURSELF //
+    //********************//
+
     public static void characterCreation() {
         System.out.println("Please tell me your of your might. STRENGTH: (1-10)\n");
         byte userStrength = sc.nextByte();
@@ -106,6 +108,10 @@ public class turtleBear {
         }
         ;
         sleepy(1500);
+
+        //*********************//
+        // DESIGNING THE ENEMY //
+        //*********************//
 
         System.out.printf("Tell me, mighty warrior: %nWhat is the name of the foe you will face in glorious combat? Name: %n");
         enemyName = sc.next();
@@ -130,13 +136,16 @@ public class turtleBear {
             System.out.printf("You really aren't going to make this game very fun if you keep cheating like this.%n%n");
             sleepy(3000);
 
+            //******************//
+            // CONFIRMING STATS //
+            //******************//
+
             System.out.println("Okay! Well, there we go.");
             sleepy(1000);
             System.out.printf("%nTwo mighty warriors preparing to face battle.");
             sleepy(1000);
             System.out.printf("%nLet's make sure I heard you correctly: %n%n");
             sleepy(2000);
-
             System.out.printf("--------------  %n %s's Stats: %n -----------%n Strength: %s %n Guard: %s %n HP: %s %n ==============%n", userName, userStrength, userGuard, userHealth);
             sleepy(5000);
             System.out.printf("%s's Stats: %n -------------- %n Strength: %s %n Guard %s %n HP %s %n -----------%n%nIs this all correct?%n", enemyName, enemyStrength, enemyGuard, enemyHealth);
@@ -153,10 +162,12 @@ public class turtleBear {
         }
     }
 
-    //start the journey
+    //***************//
+    //  PRE-JOURNEY  //
+    //***************//
+
     public static void newJourney() {
         System.out.printf("%n==========================%nTHE JOURNEY%n==========================%n");
-//        System.out.printf("I haven't made any more in the game...%n Please try to \"cheat\" if you haven't seen that functionality yet! %nand then, while cheating, might as well give yourself all 10's,%n and then enemy all 1's... you know. %nJust to see what would happen...");
         System.out.printf("You find yourself staring at a brightly lit computer screen, %nreading a text prompt in the guise of a role-playing game. What would you like to do?%n%n");
         String badInput = sc.next();
         System.out.printf("%n%nWell that's gibberish.%n");
@@ -168,6 +179,10 @@ public class turtleBear {
         System.out.printf("%n Okay, this won't work. Let's get more specific...%n");
         journeyBegins();
     }
+
+    //****************//
+    // JOURNEY BEGINS //
+    //****************//
 
     public static void journeyBegins() {
         System.out.printf("Have you ever battled an angry TurtleBear?%n");
@@ -212,51 +227,10 @@ public class turtleBear {
 
         }
     }
-    //RANDOM NUMBER GENERATORS
-        static Random rando = new Random();
-        static int rando_int = rando.nextInt(9);
-        static int rando_intTwo = rando.nextInt(9);
-        static int randoStrength = rando.nextInt(9);
-        static int randoHealth = rando.nextInt(9);
-        static int randoGuard = rando.nextInt(9);
-        static int userStrength = rando.nextInt(9);
-        static int userHealth = rando.nextInt(9);
-        static int userGuard = rando.nextInt(9);
-        static int enemyChoice = rando.nextInt(1);
 
-        //GENERATOR ARRAYS
-        static String[] firstEvilName = new String[]{"Tilfor","Onslow","Patton","Northcliffe","James", "Rider", "Goldgaze", "Silverpelt", "JW", "Jacob"};
-        static String[] lastEvilName = new String[]{"Steamwraith", "Embersnare", "Dreamscream", "Vapor", "Franco", "Duskbluff", "Goreflare", "Dawntoe", "Barrow", "Hester"};
-        static String newEnemyName = firstEvilName[rando_int] + " " + lastEvilName[rando_intTwo];
-        static int[] stats = new int[]{1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
-        static int[] userStats = new int[]{1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
-        static String[] enemyChoices = new String[]{"ATTACK", "DEFENSE"};
-
-        //SETTING THE VARIABLES
-        static int newEnemyStrength = stats[randoStrength];
-        static int newEnemyGuard = stats[randoGuard];
-        static int newEnemyHealth = stats[randoHealth];
-        static int newUserStrength = userStats[userStrength];
-        static int newUserGuard = userStats[userGuard];
-        static int newUserHealth = userStats[userHealth];
-
-
-
-
-    public static void amorphous() {
-        sleepy(1500);
-        System.out.printf("nuclear-powered,%n");
-        sleepy(1500);
-        System.out.printf("maximum-kill-boss %n");
-        sleepy(1500);
-        System.out.printf("captain of the slime-death army: %s!!%n%n", newEnemyName);
-        sleepy(3000);
-        System.out.printf("%n====================%n%s's Stats:%n---------------------%nStrength: %d%nDEFENSE: %d%nHP: %d%n============%n",newEnemyName, newEnemyStrength, newEnemyGuard, newEnemyHealth);
-        sleepy(4000);
-        System.out.printf("%n====================%n%s's Stats:%n---------------------%nStrength: %d%nDEFENSE: %d%nHP: %d%n============%n", userName, newUserStrength, newUserGuard, newUserHealth);
-        System.out.printf("Prepare yourself...%n");
-        sleepy(2000);
-    }
+    //*****************//
+    // BEGIN THE FIGHT //
+    //*****************//
 
     public static void theFight() {
         System.out.printf("=========================================%nTIME TO FIGHT%n=========================================%n");
@@ -266,7 +240,10 @@ public class turtleBear {
         sleepy(3000);
         String userMove = sc.next();
 
-            //your turn
+            //***********//
+            // YOUR TURN //
+            //***********//
+
                 if (userMove.equalsIgnoreCase("attack")) {
                     if (newEnemyGuard >= newUserStrength) {
                         newEnemyHealth--;
@@ -300,9 +277,9 @@ public class turtleBear {
                     sleepy(4000);
                 }
 
-
-
-            //enemy turn
+            //************//
+            // ENEMY TURN //
+            //************//
 
             System.out.printf("%n%n========================%n%s's turn!%n========================%n%n", newEnemyName);
             System.out.printf("He's going to " + enemyChoices[enemyChoice] + "%n");
@@ -331,6 +308,67 @@ public class turtleBear {
             }
         }
     }
+
+
+    //****************************//
+    // RANDOM VARIABLE GENERATORS //
+    //****************************//
+
+    static Random rando = new Random();
+    static int rando_int = rando.nextInt(9);
+    static int rando_intTwo = rando.nextInt(9);
+    static int newEnemyStrength = rando.nextInt(10)+1;
+    static int newEnemyHealth = rando.nextInt(10)+1;
+    static int newEnemyGuard = rando.nextInt(10)+1;
+    static int newUserStrength = rando.nextInt(10)+1;
+    static int newUserHealth = rando.nextInt(10)+1;
+    static int newUserGuard = rando.nextInt(10)+1;
+    static int enemyChoice = rando.nextInt(1);
+
+    //******************//
+    // GENERATOR ARRAYS //
+    //******************//
+
+    static String[] firstEvilName = new String[]{"Tilfor","Onslow","Patton","Northcliffe","James", "Rider", "Goldgaze", "Silverpelt", "JW", "Jacob"};
+    static String[] lastEvilName = new String[]{"Steamwraith", "Embersnare", "Dreamscream", "Vapor", "Franco", "Duskbluff", "Goreflare", "Dawntoe", "Barrow", "Hester"};
+    static String newEnemyName = firstEvilName[rando_int] + " " + lastEvilName[rando_intTwo];
+    static String[] enemyChoices = new String[]{"ATTACK", "DEFENSE"};
+
+    //**********************//
+    // DESCRIPTION OF ENEMY //
+    //**********************//
+
+    public static void amorphous() {
+        sleepy(1500);
+        System.out.printf("nuclear-powered,%n");
+        sleepy(1500);
+        System.out.printf("maximum-kill-boss %n");
+        sleepy(1500);
+        System.out.printf("captain of the slime-death army: %s!!%n%n", newEnemyName);
+        sleepy(3000);
+        System.out.printf("%n====================%n%s's Stats:%n---------------------%nStrength: %d%nDEFENSE: %d%nHP: %d%n============%n",newEnemyName, newEnemyStrength, newEnemyGuard, newEnemyHealth);
+        sleepy(4000);
+        System.out.printf("%n====================%n%s's Stats:%n---------------------%nStrength: %d%nDEFENSE: %d%nHP: %d%n============%n", userName, newUserStrength, newUserGuard, newUserHealth);
+        System.out.printf("Prepare yourself...%n");
+        sleepy(2000);
+    }
+
+    //***************//
+    // CONSOLE DELAY //
+    //***************//
+
+    public static void sleepy(int num) {
+        try {
+            Thread.sleep(num);
+        } catch (Exception e) {
+            System.out.println("yep");
+        }
+    }
+
+    //*****************//
+    // CLOSING METHODS //
+    //*****************//
+
     public static void winCredits() {
         System.out.printf("Great job! You won!%n%n-----------%nGAME OVER!%n-----------%n");
     }
