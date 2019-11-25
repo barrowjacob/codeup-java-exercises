@@ -57,9 +57,9 @@ public class turtleBear {
     }
 
     public static void characterCreation() {
-        System.out.println("Please tell me your of your might. Strength: (1-10)\n");
+        System.out.println("Please tell me your of your might. STRENGTH: (1-10)\n");
         byte userStrength = sc.nextByte();
-        System.out.printf("And how tough are you? Guard: (1-10)%n");
+        System.out.printf("And how tough are you? DEFENSE: (1-10)%n");
         byte userGuard = sc.nextByte();
         System.out.printf("What of your vitality? HP: (1-10)%n");
         byte userHealth = sc.nextByte();
@@ -77,9 +77,9 @@ public class turtleBear {
 
         System.out.printf("Tell me, mighty warrior: %nWhat is the name of the foe you will face in glorious combat? Name: %n");
         enemyName = sc.next();
-        System.out.printf("And what is %s's strength? Strength: (1-10)%n", enemyName);
+        System.out.printf("And what is %s's strength? STRENGTH: (1-10)%n", enemyName);
         byte enemyStrength = sc.nextByte();
-        System.out.printf("And what of their toughness? Guard: (1-10)%n");
+        System.out.printf("And what of their toughness? GUARD: (1-10)%n");
         byte enemyGuard = sc.nextByte();
         System.out.printf("Is their health even comparable to yours? HP: (1-10)%n");
         byte enemyHealth = sc.nextByte();
@@ -161,7 +161,9 @@ public class turtleBear {
             sleepy(1500);
             System.out.printf("%n You think you can break the rules and get away with it? %n%n");
             sleepy(2000);
-            System.out.printf("Well, now you're going to have to fight TWO Turtle Bears!%n How do you feel about that?%n%n");
+            System.out.printf("Well, now you're going to have to fight TWO Turtle Bears!");
+            sleepy(2000);
+            System.out.printf("%n How do you feel about that?%n%n");
             sleepy(2000);
             System.out.printf("Wait... %n%n");
             sleepy(1500);
@@ -196,7 +198,7 @@ public class turtleBear {
         static String newEnemyName = firstName[rando_int] + " " + lastName[rando_intTwo];
         static int[] stats = new int[]{1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
         static int[] userStats = new int[]{1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
-        static String[] enemyChoices = new String[]{"ATTACK", "GUARD"};
+        static String[] enemyChoices = new String[]{"ATTACK", "DEFENSE"};
 
         //SETTING THE VARIABLES
         static int newEnemyStrength = stats[randoStrength];
@@ -217,8 +219,9 @@ public class turtleBear {
         sleepy(1500);
         System.out.printf("captain of the slime-death army: %s!!%n%n", newEnemyName);
         sleepy(3000);
-        System.out.printf("%n====================%n%s's Stats:%n---------------------%nStrength: %d%nGuard: %d%nHP: %d%n============%n",newEnemyName, newEnemyStrength, newEnemyGuard, newEnemyHealth);
+        System.out.printf("%n====================%n%s's Stats:%n---------------------%nStrength: %d%DEFENSE: %d%nHP: %d%n============%n",newEnemyName, newEnemyStrength, newEnemyGuard, newEnemyHealth);
         sleepy(4000);
+        System.out.printf("%n====================%n%s's Stats:%n---------------------%nStrength: %d%nDEFENSE: %d%nHP: %d%n============%n", userName, newUserStrength, newUserGuard, newUserHealth);
         System.out.printf("Prepare yourself...%n");
         sleepy(2000);
     }
@@ -226,48 +229,72 @@ public class turtleBear {
     public static void theFight() {
         System.out.printf("=========================================%nTIME TO FIGHT%n=========================================%n");
         while(true) {
-        System.out.printf("| CHOOSE YOUR MOVE |           YOUR STATS |%n| ATTACK |           YOUR STRENGTH: %d |%n| DEFEND |           YOUR GUARD: %d |%n| FLEE |           YOUR HP: %d |%n", newUserStrength, newUserGuard, newUserHealth);
+        System.out.printf("%n%n===========================================%n%n| CHOOSE YOUR MOVE |           YOUR STATS |%n------------------------------------------- %n| ATTACK |               YOUR STRENGTH: %d |%n| DEFEND |                  YOUR DEFENSE: %d |%n| FLEE |                       YOUR HP: %d |%n", newUserStrength, newUserGuard, newUserHealth);
         System.out.printf("===========================================%n");
+        sleepy(3000);
         String userMove = sc.next();
 
             //your turn
                 if (userMove.equalsIgnoreCase("attack")) {
                     if (newEnemyGuard >= newUserStrength) {
                         newEnemyHealth--;
+                        sleepy(2000);
+                        System.out.printf("You attacked for %d hit points! %s's health is now  %d%n", newUserStrength, newEnemyName, newEnemyHealth);
+                        sleepy(1000);
+                        if (newEnemyHealth < 1) {
+                            winCredits();
+                            return;
+                        }
                     } else {
                         newEnemyHealth -= (newUserStrength);
+                        sleepy(2000);
+                        System.out.printf("You attacked for %d hit points! %s's health is now  %d%n", newUserStrength, newEnemyName, newEnemyHealth);
+                        sleepy(1000);
+                        if (newEnemyHealth < 1) {
+                            winCredits();
+                            return;
+                        }
                     }
-                    System.out.printf("You attacked for %d hit points! %s's health is now  %d%n", newUserStrength, newEnemyName, newEnemyHealth);
-                    if (newEnemyHealth < 1) {
-                        winCredits();
-                    }
-                } else if (userMove.equalsIgnoreCase("guard")) {
+
+                } else if (userMove.equalsIgnoreCase("defend")) {
                     newUserGuard += 10;
+                    sleepy(2000);
                 } else if (userMove.equalsIgnoreCase("flee")) {
                     System.out.println("You can't escape.");
+                    sleepy(2000);
                 } else {
                     System.out.println("You stand around, sipping tea and thinking about Yu-Gi-Oh, rather than do anything productive with your life. YOU FORFEIT YOUR TURN.");
+                    sleepy(4000);
                 }
 
 
 
             //enemy turn
 
-            System.out.printf("%s's turn!%n", newEnemyName);
+            System.out.printf("%n%n========================%n%s's turn!%n========================%n%n", newEnemyName);
             System.out.printf("He's going to " + enemyChoices[enemyChoice] + "%n");
+            sleepy(2000);
             if (enemyChoices[enemyChoice].equalsIgnoreCase("attack")) {
                 if (newUserGuard >= newEnemyStrength) {
                     newUserHealth--;
                     System.out.printf("He attacked for %d and your health is now %d%n", newEnemyStrength, newUserHealth);
+                    sleepy(3000);
+                    if (newUserHealth < 0) {
+                        loseCredits();
+                        return;
+                    }
                 } else {
                     newUserHealth -= newEnemyStrength;
                     System.out.printf("He attacked for %d and your health is now %d%n", newEnemyStrength, newUserHealth);
-                } if (newUserHealth < 0) {
-                    loseCredits();
-                    return;
+                    sleepy(3000);
+                    if (newUserHealth < 0) {
+                        loseCredits();
+                        return;
+                    }
                 }
             } else if (enemyChoices[enemyChoice].equalsIgnoreCase("defend")) {
-                newEnemyGuard++;
+                newEnemyGuard += 10;
+                sleepy(2000);
             }
         }
     }
@@ -287,5 +314,6 @@ public class turtleBear {
 
 //NOTAS
 // FIX FIGHT ON "CHEAT" MODE TO REFLECT INPUTTED STATS
+// THE FIGHT DOESN'T ALWAYS END IF YOU WIN!!
 // FIX TIMING AND SPACING
 // CARRY ON
