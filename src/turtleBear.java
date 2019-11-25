@@ -27,7 +27,7 @@ public class turtleBear {
         System.out.printf("EXTREME COMBAT?%n");
         String userInput = sc.next();
         if (userInput.equalsIgnoreCase("yes") || userInput.equalsIgnoreCase("yep")) {
-            System.out.printf("Great! Let's do this!");
+            System.out.println("Great! Let's do this!");
         } else {
             System.out.printf("Whatever! Let's do this! %n");
         }
@@ -39,7 +39,7 @@ public class turtleBear {
         sleepy(2000);
 
         do {
-            System.out.printf("%nDo you want to cheat and make your own enemy or play fairly and just let us do the talking? %nType \"CHEAT\" or \"PLAY FAIR\"%n", userName, userName);
+            System.out.printf("%nDo you want to cheat and make your own enemy or play fairly and just let us do the talking? %nType \"CHEAT\" or \"PLAY FAIR\"%n");
             String userCheat = sc.next();
             if (userCheat.equalsIgnoreCase("cheat")) {
                 System.out.printf("*Sigh* Okay, %s. Have it your way.%n", userName);
@@ -55,7 +55,7 @@ public class turtleBear {
     }
 
     public static void characterCreation() {
-        System.out.printf("Please tell me your of your might. Strength: (1-10)%n", userName);
+        System.out.println("Please tell me your of your might. Strength: (1-10)\n");
         byte userStrength = sc.nextByte();
         System.out.printf("And how tough are you? Guard: (1-10)%n");
         byte userGuard = sc.nextByte();
@@ -96,7 +96,7 @@ public class turtleBear {
             System.out.printf("You really aren't going to make this game very fun if you keep cheating like this.%n%n");
             sleepy(3000);
 
-            System.out.printf("Okay! Well, there we go.");
+            System.out.println("Okay! Well, there we go.");
             sleepy(1000);
             System.out.printf("%nTwo mighty warriors preparing to face battle.");
             sleepy(1000);
@@ -155,13 +155,13 @@ public class turtleBear {
             amorphous();
             theFight();
         } else if (i > 0) {
-            System.out.printf("You think you're clever, don't you?");
+            System.out.println("You think you're clever, don't you?");
             sleepy(1500);
             System.out.printf("%n You think you can break the rules and get away with it? %n%n");
             sleepy(2000);
             System.out.printf("Well, now you're going to have to fight TWO Turtle Bears!%n How do you feel about that?%n%n");
             sleepy(2000);
-            System.out.printf("Wait... What?%n%n");
+            System.out.printf("Wait... %n%n");
             sleepy(1500);
             System.out.printf("Oh...%n%n");
             sleepy(1500);
@@ -224,28 +224,30 @@ public class turtleBear {
     public static void theFight() {
         System.out.printf("=========================================%nTIME TO FIGHT%n=========================================%n");
         while(true) {
-        System.out.printf("| CHOOSE YOUR MOVE | YOUR STATS |%n| ATTACK | YOUR STRENGTH: %d |%n| DEFEND | YOUR GUARD: %d |%n| FLEE | YOUR HP: %d |%n", newUserStrength, newUserGuard, newUserHealth);
+        System.out.printf("| CHOOSE YOUR MOVE |           YOUR STATS |%n| ATTACK |           YOUR STRENGTH: %d |%n| DEFEND |           YOUR GUARD: %d |%n| FLEE |           YOUR HP: %d |%n", newUserStrength, newUserGuard, newUserHealth);
         System.out.printf("===========================================%n");
         String userMove = sc.next();
 
             //your turn
-
-            if (userMove.equalsIgnoreCase("attack")) {
-                if (newEnemyGuard >= newUserStrength) {
-                    newEnemyHealth--;
+                if (userMove.equalsIgnoreCase("attack")) {
+                    if (newEnemyGuard >= newUserStrength) {
+                        newEnemyHealth--;
+                    } else {
+                        newEnemyHealth -= (newUserStrength);
+                    }
+                    System.out.printf("You attacked for %d hit points! %s's health is now  %d%n", newUserStrength, newEnemyName, newEnemyHealth);
+                    if (newEnemyHealth < 1) {
+                        winCredits();
+                    }
+                } else if (userMove.equalsIgnoreCase("guard")) {
+                    newUserGuard += 10;
+                } else if (userMove.equalsIgnoreCase("flee")) {
+                    System.out.println("You can't escape.");
                 } else {
-                newEnemyHealth -= (newUserStrength);
+                    System.out.println("You stand around, sipping tea and thinking about Yu-Gi-Oh, rather than do anything productive with your life. YOU FORFEIT YOUR TURN.");
                 }
-                System.out.printf("You attacked for %d hit points! %s's health is now only %d%n", newUserStrength, newEnemyName, newEnemyHealth);
-                if (newEnemyHealth < 1) {
-                    winCredits();
-                    return;
-                }
-            } else if (userMove.equalsIgnoreCase("guard")) {
-                newUserGuard++;
-            } else {
-                System.out.printf("You can't escape.");
-            }
+
+
 
             //enemy turn
 
@@ -254,7 +256,7 @@ public class turtleBear {
             if (enemyChoices[enemyChoice].equalsIgnoreCase("attack")) {
                 if (newUserGuard >= newEnemyStrength) {
                     newUserHealth--;
-                    System.out.printf("He attacked for %d and your health is now %d%n\", newEnemyStrength, newUserHealth");
+                    System.out.printf("He attacked for %d and your health is now %d%n", newEnemyStrength, newUserHealth);
                 } else {
                     newUserHealth -= newEnemyStrength;
                     System.out.printf("He attacked for %d and your health is now %d%n", newEnemyStrength, newUserHealth);
@@ -282,9 +284,6 @@ public class turtleBear {
 
 
 //NOTAS
-
-//MAKE SURE YOU ADD THE ENEMY NAME WHEN NOT CHEATING
-    //CREATE ENEMY NAME AND STATS BASED ON RNG'S
-// ACTUALLY DO THE FIGHTING
+// FIX FIGHT ON "CHEAT" MODE TO REFLECT INPUTTED STATS
 // FIX TIMING AND SPACING
 // CARRY ON
