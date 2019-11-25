@@ -18,9 +18,11 @@ public class turtleBear {
     public static void settingUp() {
         System.out.printf("Greetings individual! %n");
         sleepy(1000);
-        System.out.printf("Are you prepared to fight in%nEXTREME");
+        System.out.printf("Are you prepared to fight in%n");
         sleepy(1000);
-        System.out.printf("%nONE ON ONE%n");
+        System.out.printf("EXTREME%n");
+        sleepy(1000);
+        System.out.printf("ONE ON ONE%n");
         sleepy(1000);
         System.out.printf("MAXIMUM%n");
         sleepy(1000);
@@ -33,13 +35,13 @@ public class turtleBear {
         }
         System.out.printf("What is your name?%n");
         userName = sc.next();
-        System.out.printf("%s, eh?", userName);
+        System.out.printf("%s, eh?%n", userName);
         sleepy(1500);
         System.out.printf("%nSounds like the name of a winner!%n Now tell me, %s.", userName);
-        sleepy(2000);
+        sleepy(2500);
 
         do {
-            System.out.printf("%nDo you want to cheat and make your own enemy or play fairly and just let us do the talking? %nType \"CHEAT\" or \"PLAY FAIR\"%n");
+            System.out.printf("%nDo you want to cheat and DESIGN your own enemy or play fairly and just let us do the talking? %nType \"CHEAT\" or \"PLAY FAIR\"%n");
             String userCheat = sc.next();
             if (userCheat.equalsIgnoreCase("cheat")) {
                 System.out.printf("*Sigh* Okay, %s. Have it your way.%n", userName);
