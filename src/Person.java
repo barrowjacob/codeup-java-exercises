@@ -1,9 +1,19 @@
 public class Person {
-    public static void main(String[] args) {
-        Person person = new Person();
-    }
+
     private String name;
-    public String getName();
-    public void setName(String name);
-    public void sayHello();
+    public  String getName(){
+        return name;
+    };
+    public void setName(String name){
+    };
+    public void sayHello(){
+    };
+    Person(nameExt){
+        this.name = nameExt;
+    }
+
+
+    public static void main(String[] args) {
+        Person per = new Person("Jacob");
+    }
 }
