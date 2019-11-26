@@ -1,12 +1,11 @@
 import java.util.Scanner;
 import java.util.Random;
 
-public class turtleBear {
+public class TurtleBear {
     static String userName;
     static int userHealth;
     static int userGuard;
     static int userStrength;
-    static String firstName;
     static String enemyName;
     static int enemyStrength;
     static int enemyHealth;
@@ -15,9 +14,6 @@ public class turtleBear {
     static int i = 0;
     static int j = 0;
 
-    //*********************//
-    // BEGIN SETTING IT UP //
-    //*********************//
     //****************************//
     // RANDOM VARIABLE GENERATORS //
     //****************************//
