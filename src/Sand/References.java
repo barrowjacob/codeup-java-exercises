@@ -15,16 +15,31 @@ public class References {
     }
 
     //this is an example of number formatting for currency
-    //can also be used for percentages, etc.
+    //can also be used with other denominations
     public static void practiceNumberFormatting() {
-        NumberFormat nf = NumberFormat.getCurrencyInstance();
+        NumberFormat nf = NumberFormat.getCurrencyInstance(Locale.ITALY);
         System.out.println(nf.format(12348934.9348));
     }
+
+    //can also be used for percentages and other things
+    //can also be used without setting variable
+    public static void numberFormattingWithoutVariable() {
+        System.out.println(NumberFormat.getPercentInstance().format(.234));
+    }
+
+    //testing scanner
+    public static void newScannerTest() {
+        Scanner sc = new Scanner(System.in);
+        String newInput = sc.nextLine();
+
+    }
+
 
 
     public static void main(String[] args) {
         sandwich();
         practiceNumberFormatting();
+        numberFormattingWithoutVariable();
 
     }
 }
