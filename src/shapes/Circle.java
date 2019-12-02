@@ -4,7 +4,7 @@ class Circle {
     private static double radius;
 
     public Circle(double radius) {
-        this.radius = radius;
+        Circle.radius = radius;
     }
     public double getArea() {
         return Math.PI * (radius * radius);
