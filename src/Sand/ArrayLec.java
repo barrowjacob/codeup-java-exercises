@@ -57,5 +57,17 @@ public class ArrayLec {
         //sorts in ascending order (also works alphabetically)
             Arrays.sort(nums3);
             System.out.println(Arrays.toString(nums3));
+
+        //TESTING OUT THE two dimensional arrays
+        // # of square brackets denotes number of 'dimensions'
+            char[][] ticTacToeBoard = {
+                    {'A','B','C'},
+                    {'D','E','F'},
+                    {'G','H','I'}
+            };
+        //first sq bracket is which array you want to look at
+        //second sq bracket is the element within the chosen array
+        System.out.println(ticTacToeBoard[1][1]);
+
     }
 }
