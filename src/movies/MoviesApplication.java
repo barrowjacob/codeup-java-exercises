@@ -35,25 +35,25 @@ public class MoviesApplication {
             } else if (userInput == 2) {
                 for (Movie movie : newMovies) {
                     if (movie.getCategory().equals("animated")) {
-                        System.out.println(movie.getName() + " -- " + movie.getCategory());
+                        System.out.println(movie.getName());
                     }
                 }
             } else if (userInput == 3) {
                 for (Movie movie : newMovies) {
                     if (movie.getCategory().equals("drama")) {
-                        System.out.println(movie.getName() + " -- " + movie.getCategory());
+                        System.out.println(movie.getName());
                     }
                 }
             } else if (userInput == 4) {
                 for (Movie movie : newMovies) {
                     if (movie.getCategory().equals("horror")) {
-                        System.out.println(movie.getName() + " -- " + movie.getCategory());
+                        System.out.println(movie.getName());
                     }
                 }
             } else if (userInput == 5) {
                 for (Movie movie : newMovies) {
                     if (movie.getCategory().equals("scifi")) {
-                        System.out.println(movie.getName() + " -- " + movie.getCategory());
+                        System.out.println(movie.getName());
                     }
                 }
             } else if (userInput == 6) {
@@ -64,7 +64,7 @@ public class MoviesApplication {
                 Movie newMovie = new Movie(movieTitleInput, movieCategoryInput);
                 newMovies = addMovie(newMovies, newMovie);
 
-                System.out.println(newMovies[newMovies.length - 1].getName() + " -- " + newMovies[newMovies.length-1].getCategory());
+                System.out.println(newMovies[newMovies.length - 1].getName());
             }
             System.out.println("========================\nWhat would you like to do? \n" +
                     " 0 - Exit \n" +
