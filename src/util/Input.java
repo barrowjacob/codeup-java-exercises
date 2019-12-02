@@ -9,7 +9,7 @@ public class Input {
         }
 
         boolean yesNo() {
-            System.out.println("Please enter \"yes/y\"");
+            System.out.println("Please enter \"yes/ y\"");
             String newYes = getString();
             return newYes.equalsIgnoreCase("yes") || newYes.equalsIgnoreCase("y");
         }
@@ -26,7 +26,7 @@ public class Input {
         }
 
         public int getInt() {
-            System.out.printf("enter number");
+            System.out.println("enter number");
             return Integer.parseInt(getString());
         }
 
