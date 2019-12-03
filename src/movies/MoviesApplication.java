@@ -63,7 +63,6 @@ public class MoviesApplication {
                 String movieCategoryInput = sc.nextLine();
                 Movie newMovie = new Movie(movieTitleInput, movieCategoryInput);
                 newMovies = addMovie(newMovies, newMovie);
-
                 System.out.println(newMovies[newMovies.length - 1].getName());
             }
             System.out.println("========================\nWhat would you like to do? \n" +
