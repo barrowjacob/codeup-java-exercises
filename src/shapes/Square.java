@@ -9,10 +9,10 @@ public class Square extends Rectangle{
         this.side = side;
     }
     @Override
-    public int getArea() {
-        return (side * side);
+    public double getArea() {
+        return (Math.pow(super.length, 2));
     }
-    public int getPerimeter() {
-        return 4*side;
+    public double getPerimeter() {
+        return 4*super.width;
     }
 }
