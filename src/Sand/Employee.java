@@ -16,7 +16,7 @@ abstract class Employee {
     public void greeting() {
         System.out.println("Hola");
     }
-
+//method must have "abstract" so it can only be used by subclasses
     public abstract void doWork();
             //readTraction is set because all employees must do it, but some read it on a computer, some in paper form...
     public abstract void readTraction();

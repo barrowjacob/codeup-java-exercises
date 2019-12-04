@@ -5,6 +5,7 @@ public class Square extends Quadrilateral{
         super(lengthParam, widthParam);
     }
 
+
     @Override
     public  double setLength() {
         return 0;
