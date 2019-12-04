@@ -1,42 +1,22 @@
 package shapes;
 
-public class Square extends Quadrilateral{
-    public Square(double lengthParam, double widthParam) {
-        super(lengthParam, widthParam);
+public class Square extends Quadrilateral {
+    public Square(double side) {
+        super(side, side);
     }
 
-
-    @Override
-    public  double setLength() {
-        return 0;
+    public void setLength(double length) {
+        this.length = length;
     }
 
-    @Override
-    public double setWidth() {
-        return 0;
+    public void setWidth(double width) {
+        this.width = width;
     }
 
-    @Override
     public double getPerimeter() {
-        return 0;
+        return length * 4;
     }
-
-    @Override
     public double getArea() {
-        return 0;
+        return width*2;
     }
-//use 'super' to reference super class when you have default constructor issues
-//    public Square(int side) {
-//        //parameters passed through have to include super class parameters that you want to reference
-//        super(side, side);
-//        this.length = side;
-//        this.width = side;
-//    }
-//    @Override
-//    public double getArea() {
-//        return (Math.pow(super.length, 2));
-//    }
-//    public double getPerimeter() {
-//        return 4 * super.width;
-//    }
 }
