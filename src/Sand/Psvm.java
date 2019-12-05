@@ -4,11 +4,17 @@ import java.util.Scanner;
 
 public class Psvm extends GroceryItem {
 
+
+    //******************//
+    // grocery exercise //
+    //******************//
+
     int totalNumberDifferentItems;
 
     public Psvm(String foodName, int quantityFood, String category) {
         super(foodName, quantityFood, category);
     }
+
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
@@ -28,6 +34,14 @@ public class Psvm extends GroceryItem {
         } for (var j = 0; j < itemArray.length; j++) {
             System.out.println(itemArray[j].name);
         }
+
+        //***************//
+        //cumulative sum //
+        //***************//
+
+        int[] intArray = new int[]{};
+
+
 
     }
 }
