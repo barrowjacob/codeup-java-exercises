@@ -54,3 +54,24 @@ public class GradesApplication {
     }
 
 }
+
+// prompt for name of foodItem
+    //store as userInput1
+
+// prompt for category of foodItem
+    //store as userInput2
+
+// prompt with 3 diff cats
+    //store response as userInput3
+
+// object constructor:
+    // name of foodItem == userInput1
+    // quantity == userInput2
+    // category == userInput3
+
+// arrayList to hold objects
+
+//
+
+
+//

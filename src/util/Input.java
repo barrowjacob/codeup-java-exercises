@@ -16,32 +16,32 @@ public class Input {
 
         public int getInt(int min, int max) {
             System.out.printf("Please enter number between %s and %s", min, max);
-            int number = getInt();
-
-            if (number < min)
-                return getInt(min, max);
-            else if (number > max)
-                return getInt(min, max);
-            return number;
+            int number = Integer.valueOf(getString());
+            try {
+                if ((number < min) || (number > max))
+                    return getInt(min, max);
+            } catch (Exception e) {
+                getInt(min, max);
+            } return number;
         }
-
         public int getInt() {
             System.out.println("enter number");
             return Integer.parseInt(getString());
         }
 
-        public double getDouble(int min, int max) {
-            double number = getDouble();
-            if (number < min)
-                return getDouble(min, max);
-            else if (number > max)
-                return getDouble(min, max);
-            return number;
+        public double getDouble(double min, double max) {
+            double number = Double.valueOf(getString());
+            try {
+                if ((number < min) || (number > max))
+                    return getDouble(min, max);
+            } catch (Exception e) {
+                getDouble(min, max);
+            } return number;
         }
 
         public double getDouble(){
             System.out.println("enter number");
-           return Integer.parseInt(getString());
+           return Double.parseDouble(getString());
         }
 }
 

@@ -35,12 +35,6 @@ public class Psvm extends GroceryItem {
             System.out.println(itemArray[j].name);
         }
 
-        //***************//
-        //cumulative sum //
-        //***************//
-
-        int[] intArray = new int[]{};
-
 
 
     }
