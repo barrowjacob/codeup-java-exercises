@@ -22,7 +22,9 @@ public class Input {
                     return getInt(min, max);
             } catch (Exception e) {
                 getInt(min, max);
-            } return number;
+            }
+            System.out.println("great! Your number is: " + number);
+            return number;
         }
         public int getInt() {
             System.out.println("enter number");
@@ -36,12 +38,15 @@ public class Input {
                     return getDouble(min, max);
             } catch (Exception e) {
                 getDouble(min, max);
-            } return number;
+            }
+            System.out.println("great! Your number is: " + number);
+            return number;
         }
 
         public double getDouble(){
             System.out.println("enter number");
            return Double.parseDouble(getString());
+
         }
 }
 
