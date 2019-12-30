@@ -1,12 +1,20 @@
 package Sand.Christmas;
 
+
+
+import static Sand.Christmas.Santa.deer;
+
+
 public class Reindeer {
 
     protected String name;
-
-    public Reindeer(String name) {
+    protected int id;
+    public Reindeer(String name, int num) {
         this.name = name;
-        System.out.println("This deer's name is " + name);
+        this.id = num;
 
+        System.out.println("This deer's name is " + name);
+        deer[num] = this;
+        System.out.println(deer[num].name + " was added to the array at the index of " + num +  ".");
     }
 }
