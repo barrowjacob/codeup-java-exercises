@@ -1,11 +1,18 @@
 package Sand.Christmas;
 
+import java.util.Arrays;
 import java.util.Scanner;
+
+import static java.util.Arrays.copyOf;
+import Sand.Christmas.Reindeer;
 
 public class Santa {
 static Scanner sc = new Scanner(System.in);
 
 public static Reindeer[] deer = new Reindeer[9];
+public static void addReindeer() {
+    deer = Arrays.copyOf(deer, deer.length + 1);
+}
 
     public static void main(String[] args) {
 
@@ -25,8 +32,12 @@ public static Reindeer[] deer = new Reindeer[9];
         Reindeer mick = new Reindeer("mick", 6);
         Reindeer lionel = new Reindeer("lionel", 7);
         Reindeer comet = new Reindeer("comet", 8);
+        Reindeer cupid = new Reindeer("cupid", 9);
+        Reindeer donner = new Reindeer("donner", 10);
+
 
         System.out.println("Here are all the deer in the array: ");
+        System.out.println(deer.length);
         for (Reindeer reindeer : deer) {
             System.out.println(reindeer.name);
         }
