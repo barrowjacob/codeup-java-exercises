@@ -1,28 +1,36 @@
 package Sand.Christmas;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Scanner;
 
-import static java.util.Arrays.copyOf;
-import Sand.Christmas.Reindeer;
 
 public class Santa {
-static Scanner sc = new Scanner(System.in);
 
-public static Reindeer[] deer = new Reindeer[9];
-public static void addReindeer() {
-    deer = Arrays.copyOf(deer, deer.length + 1);
-}
+    static Scanner sc = new Scanner(System.in);
+
+    static ArrayList wishList = new ArrayList();
+
+    public static Reindeer[] deer = new Reindeer[9];
+
+    public static void addReindeer() {
+        deer = Arrays.copyOf(deer, deer.length + 1);
+    }
+
+    static String userInput;
 
     public static void main(String[] args) {
-
-        while (true) {
+        int j = 0;
+        while (j < 3) {
             System.out.println("What would you like for Christmas?");
-            String userInput = sc.nextLine();
+            userInput = sc.nextLine();
             if (!userInput.equals("")) {
-                break;
+                wishList.add(userInput);
+                j++;
             }
         }
+        wishList.forEach(System.out::println);
+
         Reindeer dean = new Reindeer("dean", 0);
         Reindeer james = new Reindeer("james", 1);
         Reindeer sam = new Reindeer("sam", 2);
@@ -34,7 +42,6 @@ public static void addReindeer() {
         Reindeer comet = new Reindeer("comet", 8);
         Reindeer cupid = new Reindeer("cupid", 9);
         Reindeer donner = new Reindeer("donner", 10);
-
 
         System.out.println("Here are all the deer in the array: ");
         System.out.println(deer.length);
