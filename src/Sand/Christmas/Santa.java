@@ -2,6 +2,7 @@ package Sand.Christmas;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.Scanner;
 
 
@@ -16,20 +17,22 @@ public class Santa {
     public static void addReindeer() {
         deer = Arrays.copyOf(deer, deer.length + 1);
     }
-
+    static HashMap<String, String> wishers = new HashMap<>();
     static String userInput;
-
+    static String newUserInput;
     public static void main(String[] args) {
         int j = 0;
         while (j < 3) {
             System.out.println("What would you like for Christmas?");
             userInput = sc.nextLine();
+            System.out.println("What is your name?");
+            newUserInput = sc.nextLine();
             if (!userInput.equals("")) {
-                wishList.add(userInput);
+                wishers.put(userInput, newUserInput);
                 j++;
             }
         }
-        wishList.forEach(System.out::println);
+        System.out.println(wishers);
 
         Reindeer dean = new Reindeer("dean", 0);
         Reindeer james = new Reindeer("james", 1);
