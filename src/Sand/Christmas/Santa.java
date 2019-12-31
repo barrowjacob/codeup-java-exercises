@@ -55,3 +55,6 @@ public class Santa {
 
     }
 }
+
+//added new user, database and table through mysql. finished
+// all but bonus on january 2/3.
