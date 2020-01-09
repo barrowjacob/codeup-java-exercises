@@ -2,6 +2,14 @@ package Sand;
 import java.util.*;
 import java.io.*;
 public class MorningWarmup {
+//1/9 warm up
+public static int SimpleAdding(int num) {
+    int newTotal = num;
+    for (int i = num; i > 0; i--) {
+        newTotal += (i-1);
+        return newTotal;
+    }
+
 
 
 
