@@ -6,9 +6,11 @@ public class MorningWarmup {
 public static int SimpleAdding(int num) {
     int newTotal = num;
     for (int i = num; i > 0; i--) {
-        newTotal += (i-1);
-        return newTotal;
+        newTotal += (i - 1);
     }
+    return newTotal;
+
+}
 
 
 
