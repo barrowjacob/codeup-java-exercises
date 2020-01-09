@@ -9,21 +9,21 @@ public static int SimpleAdding(int num) {
         newTotal += (i - 1);
     }
     return newTotal;
-
 }
 
 
 
 
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        System.out.println("Please enter something");
-        String userInput = sc.nextLine();
-        String reversedInput = "";
-        for (int i = userInput.length()-1; i >= 0; i--) {
-            reversedInput += userInput.charAt(i);
-        }
-        System.out.println(reversedInput);
+//        Scanner sc = new Scanner(System.in);
+//        System.out.println("Please enter something");
+//        String userInput = sc.nextLine();
+//        String reversedInput = "";
+//        for (int i = userInput.length()-1; i >= 0; i--) {
+//            reversedInput += userInput.charAt(i);
+//        }
+//        System.out.println(reversedInput);
+        System.out.println(SimpleAdding(300));
     }
 
 }
