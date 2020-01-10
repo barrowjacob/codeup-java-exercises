@@ -2,7 +2,21 @@ package Sand;
 import java.util.*;
 import java.io.*;
 public class MorningWarmup {
-//1/9 warm up
+
+
+    public static double calculateBaseToExponent(int num1, int num2) {
+        double newTotal = 1;
+        for (int i = 1; i <= num2; i++) {
+            newTotal *= num1;
+        } return newTotal;
+    }
+
+
+
+
+
+
+    //1/9 warm up
 public static int SimpleAdding(int num) {
     int newTotal = num;
     for (int i = num; i > 0; i--) {
@@ -15,6 +29,7 @@ public static int SimpleAdding(int num) {
 
 
     public static void main(String[] args) {
+        System.out.println(calculateBaseToExponent(2,4));
 //        Scanner sc = new Scanner(System.in);
 //        System.out.println("Please enter something");
 //        String userInput = sc.nextLine();
@@ -23,7 +38,7 @@ public static int SimpleAdding(int num) {
 //            reversedInput += userInput.charAt(i);
 //        }
 //        System.out.println(reversedInput);
-        System.out.println(SimpleAdding(300));
+//        System.out.println(SimpleAdding(300));
     }
 
 }
